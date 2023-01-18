@@ -5,7 +5,7 @@ import styles from "./payment.module.css";
 import { TiTick } from "react-icons/ti";
 import { RiCloseFill } from "react-icons/ri";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
 import {Box, useDisclosure} from "@chakra-ui/react";
@@ -65,9 +65,9 @@ const Cart = () => {
   const [totalRs, setTotalRs] = React.useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure()
   
-  const neviget = useNavigate();
+  const navigate = useNavigate();
   // let { user, setUser } = useContext(UserProvider);
-  const [opensnackbar, setOpensnackbar] = React.useState(false);
+  // const [opensnackbar, setOpensnackbar] = React.useState(false);
   // const { product, isLooding } = useSelector(
   //   (state) => state.app,
   //   shallowEqual
@@ -147,7 +147,11 @@ const Cart = () => {
   // );
 
 
-  const toast = useToast()
+  const checkout=()=>{
+    onClose();
+       navigate("/checkout");
+       
+  }
   
   
   return (
@@ -298,6 +302,7 @@ const Cart = () => {
                 </div>
               </div>
               <div
+              onClick={checkout}
                style={{ fontSize:"15px",fontWeight:"bold" }}
               >
                 PROCEED TO PAY Rs. {totalRs}
