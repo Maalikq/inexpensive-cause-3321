@@ -1,11 +1,12 @@
 import styles from "./mens.card.module.css";
 
 
-const MensCard = () => {
+const MensCard = ({avatar}) => {
 
   return (
     <div className={styles.container}>
-    <h1>hellow</h1>
+    <div><img src={avatar} alt="" /></div>
+    <h1>helow</h1>
     </div>
   );
 };

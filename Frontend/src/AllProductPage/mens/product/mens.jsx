@@ -1,18 +1,14 @@
 import styles from "./mens.module.css";
-
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getProductData } from "../Redux/actions";
+import { getProductData } from "../redux/action";
 import MensCard from "./mens.card";
 
-
-const Products = () => {
-  
+const MensProducts = () => {
   const dispatch = useDispatch();
   const data = useSelector((store) => store);
 
-
-let products = data.MensReducer.data;
+  let products = data.MensReducer.data;
 
   useEffect(() => {
     dispatch(getProductData);
@@ -20,14 +16,12 @@ let products = data.MensReducer.data;
 
   return (
     <div className={styles.container}>
-     
-     
-        {products?.map((item) => (
-          <MensCard key={item.id} {...item} />
-        ))}
-     
-      
+      {products?.map((item) => (
+        <div key={item.id} className={styles.allDataGrid}>
+          <MensCard {...item} />
+        </div>
+      ))}
     </div>
   );
 };
-export default Products;
+export default MensProducts;
