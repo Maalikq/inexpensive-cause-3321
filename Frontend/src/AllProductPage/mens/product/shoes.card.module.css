@@ -1,0 +1,35 @@
+.Cardcontainer {
+  height: 100%;
+  border-radius: 10px;
+}
+.Cardcontainer:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.mensPname {
+   color: #666666;
+  font-size: 13px;
+  line-height: 18px;
+}
+.mensPprice {
+  margin-right: 10px;
+  font-size: 13px;
+  text-decoration: line-through;
+  color: #cccccc;
+}
+.offPricemens {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+}
+.offbtn {
+  margin-left: 10px;
+  color: #666666;
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 0px 3px;
+  border: 1px solid #666666;
+}
+.priceall {
+  margin-top: 10px;
+}
