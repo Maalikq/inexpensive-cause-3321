@@ -133,18 +133,7 @@ const Cart = () => {
     setCart(data);
   };
 
-  // const action = (
-  //   <React.Fragment>
-  //     <IconButton
-  //       size="small"
-  //       aria-label="Call Segun"
-  //       colorScheme='teal'
-  //       onClick={handleClose}
-  //     >
-  //       <CloseButton fontSize="small" />
-  //     </IconButton>
-  //   </React.Fragment>
-  // );
+  
 
 
   const checkout=()=>{
@@ -158,14 +147,7 @@ const Cart = () => {
     <div>
 
 <div className={styles.main}>
-      {/* <Snackbar
-        anchorOrigin={{ vertical:"top", horizontal:"center" }}
-        open={opensnackbar}
-        autoHideDuration={4000}
-        onClose={() => setOpensnackbar(false)}
-        message="Please Sign in!"
-        action={action}
-      /> */}
+      
         <div className={styles.cont}>
           <Notification show={popup} className={styles.notif}>
             <div>

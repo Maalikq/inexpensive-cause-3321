@@ -1,9 +1,13 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertIcon, Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import Address from './Address';
+import Review from './Review';
 
 const Checkout = () => {
 
     const [login,setlogin]=useState(false);
+    const [add,setadd]=useState(false);
+    const[review,setreview]=useState(true);
 
     const data=[
         {
@@ -40,24 +44,28 @@ const Checkout = () => {
         }
     
       ]
-console.log(login)
+
+      let showadr=JSON.parse(localStorage.getItem("address")) || {};
+
+     
+
   return (
     <div>
  <Box display="flex" flexDirection={{lg:"row",sm:"column",md:"column"}} border="1px solid black">
 
     <Box  width={{lg:"75%",md:"100%",sm:"100%"}} p={5}>
     
-    <Accordion allowToggle border="1px solid gray" borderRadius="10px"> 
+    <Accordion defaultIndex={[2]} allowToggle border="1px solid gray" borderRadius="10px" width={{lg:"100%",md:"400px",sm:"360px"}}> 
 
   <AccordionItem border="none" borderBottom="1px solid grey"  >
     <h2>
       <AccordionButton>
-        <Box as="span" flex='1' onClick={()=>setlogin(!login)} color={login==true?"white":'gray.600'} backgroundColor={login==true?"black":"white"} p={2} textAlign='left'>
+        <Box as="span" flex='1' onClick={()=>setlogin(!login)} color={login==true?"white":'gray.600'} backgroundColor={login==true?"black":"white"} borderRadius="10px" p={2} textAlign='left'>
         <Alert status='success' variant="none">
-            <Flex>
+            <Flex direction={{lg:"row",sm:"column"}}>
          { login==false && <AlertIcon color="green" boxSize={6}/>}
             <Text color={login?"white":"gray.600"}>1.Login</Text>
-            { login==false && <Text ml="200px">suryawanshi@gmail.com</Text>}
+            { login==false && <Text ml={{lg:"200px"}}>suryawanshi@gmail.com</Text>}
        </Flex>
        
         </Alert>
@@ -74,22 +82,56 @@ console.log(login)
     </AccordionPanel>
   </AccordionItem>
 
-  <AccordionItem border="none" >
+  <AccordionItem border="none" borderBottom="1px solid grey">
     <h2>
       <AccordionButton>
-        <Box as="span" flex='1'p={2} textAlign='left'>
-          Section 2 title
+        <Box as="span" flex='1'onClick={()=>setadd(!add)} color={add==true?"white":'gray.600'} backgroundColor={add==true?"black":"white"} borderRadius="10px" p={2} textAlign='left'>
+         
+        <Alert status='success' variant="none">
+            <Flex direction={{lg:"row",sm:"column"}}>
+         { add==false && <AlertIcon color="green" boxSize={6}/>}
+            <Text color={add?"white":"gray.600"}>2.DELIVERY ADDRESS</Text>
+
+            { add==false && <Box  ml={{lg:"150px"}}>{showadr.address && <Box>
+               <Text>{`${showadr.name}  Mob: ${showadr.mob} `}</Text> 
+               <Text>{`${showadr.address} ${showadr.locality}`}</Text>
+               <Text>{`${showadr.city} - ${showadr.pincode}, ${showadr.state}`} <span style={{color:"blue"}}>Change</span></Text>
+            </Box>}</Box>}
+
+       </Flex>
+       
+        </Alert>
+
+         {/* Section 2 title */}
         </Box>
-        <AccordionIcon />
+        
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+     
+     <Address/>
+
     </AccordionPanel>
   </AccordionItem>
+
+
+  <AccordionItem border="none">
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' onClick={()=>setreview(!review)} color={review==true?"white":'gray.600'} backgroundColor={review==true?"black":"white"} borderRadius="10px" p={4} textAlign='left'>
+         3.Review Order
+        </Box>
+        
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+
+     <Review/>
+     
+    </AccordionPanel>
+  </AccordionItem>
+
+
 </Accordion>
     </Box>
 
