@@ -6,7 +6,7 @@ const MensCard = ({avatar}) => {
   return (
     <div className={styles.container}>
     <div><img src={avatar} alt="" /></div>
-    <h1>helow</h1>
+    <h1>hellow</h1>
     </div>
   );
 };
