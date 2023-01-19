@@ -1,0 +1,18 @@
+.products-carousel__slider {
+    display: flex;
+    background: #fff;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    .mobile-only {
+      display: block;
+    }
+    .desktop-only {
+      display: none;
+    }
+  }
+  

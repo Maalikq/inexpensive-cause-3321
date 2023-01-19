@@ -1,0 +1,94 @@
+.download {
+    background: #fff;
+    margin-top: 50px;
+  }
+  
+  .download-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    background-image: url("../Assets/Home/leaves.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+  }
+  
+  .download-img-container {
+    width: 40%;
+  }
+  
+  .download-img-container img {
+    width: 100%;
+  }
+  
+  .download-content {
+    margin-right: 60px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .download-title {
+    font-size: 40.4px;
+    font-weight: bold;
+    line-height: 1.33;
+    color: #222222;
+    margin-bottom: 25px;
+  }
+  
+  .download-desc1,
+  .download-desc2 {
+    font-size: 17.6px;
+    font-weight: normal;
+    line-height: 1.84;
+    color: #777777;
+  }
+  
+  .download-store {
+    display: flex;
+    width: 100%;
+  }
+  
+  .download-store {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .download-store1 {
+    height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .download-store2 {
+    height: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 700px) {
+    .download-container {
+      flex-direction: column;
+      padding-bottom: 20px;
+      margin-top: 20px;
+    }
+    .download-img-container {
+      width: 50%;
+    }
+    .download-content {
+      width: 80%;
+      margin-top: 20px;
+    }
+    .download-title {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.33;
+      color: #222222;
+      margin-bottom: 15px;
+    }
+  }
+  

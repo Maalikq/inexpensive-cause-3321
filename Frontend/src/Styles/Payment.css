@@ -1,0 +1,50 @@
+.payment {
+    background: #fff;
+    padding: 30px 0;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  
+  .payment-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    text-align: left;
+  }
+  
+  .payment p {
+    margin-bottom: 10px;
+    margin-left: 5px;
+  }
+  
+  .payment-social {
+    margin-left: 15%;
+  }
+  
+  .payment nav img {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .socialIcon{
+    width: 30px;
+    height: 32px;
+  }
+  @media (max-width: 800px) {
+    .payment-container {
+      flex-direction: column;
+    }
+    .payment-social {
+      margin-left: 0px;
+    }
+    .pay-section {
+      margin-bottom: 20px;
+    }
+    .pay-section img {
+      width: 100%;
+    }
+    .socialIcon{
+        width: 25px;
+        height: 27px;
+      }
+  }
+  

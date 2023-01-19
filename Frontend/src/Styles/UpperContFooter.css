@@ -1,0 +1,20 @@
+.upperfoot {
+    background: #fff;
+    margin-top: 50px;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  
+  .upperfoot-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 700px) {
+    .upperfoot-container {
+      flex-direction: column;
+    }
+  }
+  

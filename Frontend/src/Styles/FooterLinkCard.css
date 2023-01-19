@@ -1,0 +1,10 @@
+.footerlower-link-a,
+.footerlower-link-title,
+.footerlower-link-slash {
+  font-size: 13px;
+  color: #777;
+}
+
+.footerlower-link-a:hover {
+  color: #555;
+}

@@ -1,0 +1,82 @@
+.pincode {
+    height: 100%;
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 4px 17px 0 rgb(0 0 0 / 10%);
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  .pincode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pincode-heading {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999999;
+    padding-bottom: 4px;
+  }
+  
+  .pincode-dash {
+    height: 2px;
+    background-color: #eaeaea;
+    width: 19px;
+    margin: 8px auto;
+  }
+  
+  .pincode-para {
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1.59;
+    text-align: center;
+    color: #5a5a59;
+    padding: 0 5px;
+    margin-bottom: 8px;
+  }
+  
+  .pincode input {
+    height: 35px;
+    padding: 3px 0px 6px 9px;
+    line-height: 16px;
+    font-size: 12px;
+    line-height: 1.47;
+    color: #999999;
+    border-radius: 1.9px;
+    background-color: #fbfbfb;
+    border: solid 1px #e5e5e5;
+    width: 100%;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  
+  .pincode-submit {
+    border-color: #333;
+    background: #333;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: 6px 18px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .pincode-next {
+    color: #999;
+    font-size: 12px;
+    background: #f4f4f4;
+    border-radius: 3px;
+    outline: none;
+    border-color: #fbfbfb;
+    padding: 8px 10px;
+    border: none;
+  }
+  
+  .pincode img {
+    width: 100%;
+  }
+  

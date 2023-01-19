@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
-import ProductCard from './AllProductPage/mens/product/mens.card';
+import {Home} from './Homepage/Home';
+// import ProductCard from './AllProductPage/mens/product/mens.card';
 function App() {
   return (
     <div className="App">
-      
-<ProductCard/>
+      <Home />
+{/* <ProductCard/> */}
     
     </div>
   );
