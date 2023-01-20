@@ -2,8 +2,10 @@ import styles from "./tShirt.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ScrollToTop from "react-scroll-to-top";
+import { BsArrowUpCircleFill } from "react-icons/bs";
 //import { getProductData } from "../redux/action";
-import MensCard from "./shoes.card";
+import TshirtCard from "./tShirt.Card";
 import { Button } from "@chakra-ui/react";
 
 const Tshirt = () => {
@@ -19,26 +21,35 @@ const Tshirt = () => {
       .get("https://snapdealbackend.onrender.com/products/tshirt")
       .then((res) => setProducts(res.data));
   }, []);
-  const handleSort = () => {
-    let sortedData = [...products];
-    console.log(sortedData);
-    if (sortOption === "price-asc") {
-      sortedData = products.sort((a, b) => a.offPrice - b.offPrice);
-    } else if (sortOption === "price-desc") {
-      sortedData = products.sort((a, b) => b.offPrice - a.offPrice);
-    } else if (sortOption === "rating-asc") {
-      sortedData = products.sort((a, b) => a.rating - b.rating);
-    }
+  //  const handleSelect = (event) => {
+  //    setSortOption(event.target.value);
+  //    let sortedData = [...products];
 
-    setProducts(sortedData);
-  };
-  const handleSelect = (event) => {
-    setSortOption(event.target.value);
-  };
+  //    if (sortOption === "price-asc") {
+  //      sortedData = products.sort((a, b) => a.offPrice - b.offPrice);
+  //    } else if (sortOption === "price-desc") {
+  //      sortedData = products.sort((a, b) => b.offPrice - a.offPrice);
+  //    } else if (sortOption === "rating-asc") {
+  //      sortedData = products.sort((a, b) => a.rating - b.rating);
+  //    }
+  //  };
+ 
 
   return (
     <div>
-      <div className={styles.sortdiv}>
+      <div className={styles.trendingSearch}>
+        <ul className={styles.mensTredingul}>
+          <li>Treading Searches</li>
+          <li>Shoes for men</li>
+          <li>Sport Shoes for mens</li>
+          <li>Saree</li>
+          <li>tShirt</li>
+          <li>Wall sticker</li>
+          <li>Kurti set</li>
+          <li>Kitchen products</li>
+        </ul>
+      </div>
+      {/* <div className={styles.sortdiv}>
         <select onChange={handleSelect}>
           <option value="">Sort by:</option>
           <option value="price-desc">Price Low to High</option>
@@ -46,24 +57,21 @@ const Tshirt = () => {
           <option value="disc-asc">Discount</option>
           <option value="rating-asc">Rating</option>
         </select>
-        <Button
-          variant="outline"
-          width="100px"
-          height="20px"
-          colorScheme="teal"
-          className={styles.sortbtn}
-          onClick={handleSort}
-        >
-          Sort
-        </Button>
-      </div>
+       
+      </div> */}
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
-            <MensCard {...item} />
+            <TshirtCard {...item} />
           </div>
         ))}
       </div>
+      <ScrollToTop
+        smooth
+        width="15"
+        component={<BsArrowUpCircleFill color="#5A5A5A" size={40} />}
+        color="grey"
+      />
     </div>
   );
 };
