@@ -7,7 +7,9 @@
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .mensPname {
-   color: #666666;
+  margin-left: 5px;
+  margin-right: 40px;
+  color: #666666;
   font-size: 13px;
   line-height: 18px;
 }
@@ -31,5 +33,13 @@
   border: 1px solid #666666;
 }
 .priceall {
+  margin-left: -80px;
   margin-top: 10px;
 }
+.ratingflex {
+  width: 20%;
+  margin-bottom: 10px;
+  margin-left: 6%;
+  display: flex;
+}
+

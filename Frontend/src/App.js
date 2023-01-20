@@ -16,10 +16,10 @@ function App() {
     <div className="App">
       {/* <Allroute/>
        <Cart/>  */}
-       {/* <Skin/> */}
- <MensProducts/> 
+       <Skin/>
+  {/* <MensProducts/>   */}
     {/* <Sarees/> */}
-{/* <Tshirt/> */}
+  {/* <Tshirt/>   */}
     </div>
   );
 }

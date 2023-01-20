@@ -22,9 +22,12 @@ const MensProducts = () => {
        .get("https://snapdealbackend.onrender.com/products/shoes")
        .then((res) => setProducts(res.data));
    }, []);
-  const handleSort = () => {
+  
+  const handleSelect = (event) => {
+    setSortOption(event.target.value);
     let sortedData = [...products];
-    console.log(sortedData)
+    
+    ;
     if (sortOption === "price-asc") {
       sortedData = products.sort((a, b) => a.offPrice - b.offPrice);
     } else if (sortOption === "price-desc") {
@@ -33,10 +36,6 @@ const MensProducts = () => {
       sortedData = products.sort((a, b) => a.rating - b.rating);
     } 
     
-    setProducts(sortedData);
-  };
-  const handleSelect = (event) => {
-    setSortOption(event.target.value);
   };
  
   return (
@@ -61,16 +60,7 @@ const MensProducts = () => {
           <option value="disc-asc">Discount</option>
           <option value="rating-asc">Rating</option>
         </select>
-        <Button
-          variant="outline"
-          width="100px"
-          height="20px"
-          colorScheme="teal"
-          className={styles.sortbtn}
-          onClick={handleSort}
-        >
-          Sort
-        </Button>
+        
       </div>
       <div className={styles.container}>
         {products?.map((item) => (

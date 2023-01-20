@@ -5,6 +5,8 @@ import axios from "axios";
 //import { getProductData } from "../redux/action";
 import SareesCard from "./Sarees.card";
 import { Button } from "@chakra-ui/react";
+import ScrollToTop from "react-scroll-to-top";
+import { BsArrowUpCircleFill } from "react-icons/bs";
 
 const Sarees = () => {
   const [products, setProducts] = useState([]);
@@ -38,6 +40,18 @@ const Sarees = () => {
 
   return (
     <div>
+      <div className={styles.trendingSearch}>
+        <ul className={styles.mensTredingul}>
+          <li>Treading Searches</li>
+          <li>Shoes for men</li>
+          <li>Sport Shoes for mens</li>
+          <li>Saree</li>
+          <li>tShirt</li>
+          <li>Wall sticker</li>
+          <li>Kurti set</li>
+          <li>Kitchen products</li>
+        </ul>
+      </div>
       <div className={styles.sortdiv}>
         <select onChange={handleSelect}>
           <option value="">Sort by:</option>
@@ -64,6 +78,12 @@ const Sarees = () => {
           </div>
         ))}
       </div>
+      <ScrollToTop
+        smooth
+        width="15"
+        component={<BsArrowUpCircleFill color="#5A5A5A" size={40} />}
+        color="grey"
+      />
     </div>
   );
 };
