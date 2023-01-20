@@ -9,7 +9,33 @@
   
 }
 
+.trendingSearch{
+  width: 80%;
+  height: 5%;
+  margin: auto;
+  padding: 10px 0px;
+  
+}
+.mensTredingul{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+   list-style-type: none;
+}
+.mensTredingul>li{
+  font-size: 13px;
+  color: #333333;
+  background-color: white;
+  padding: 0px 5px 0px 5px;
+border: 1px solid #F7F7F7;
+}
+.strollTop{
+  background-color: #5A5A5A;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid red;
 
+}
 @media screen and (min-width: 0px) and (max-width: 768px) {
   .container {
     grid-template-columns: repeat(1, 1fr);
