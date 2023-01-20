@@ -1,15 +1,11 @@
 import React from "react";
 
-import '../Styles/HomeSidebar.css'
-
-
-
+import '../Styles/HomeStyles/HomeSidebar.css';
 import mobileIcon from "../Assets/sidebar/mobile.png";
 import livingIcon from "../Assets/sidebar/living.png";
 import homeIcon from "../Assets/sidebar/home.png";
 import fashionIcon from "../Assets/sidebar/fashion.png";
 import beautyIcon from "../Assets/sidebar/beauty.png";
-import searchIcon from "../Assets/sidebar/searchIcon.png";
 import qrImg from "../Assets/sidebar/qrcode.png";
 import { allOffersData, mobilesData } from "./HomeSidebarData";
 import mens from '../Assets/sidebar/mens.jpg'
@@ -18,6 +14,7 @@ import sidehome from "../Assets/sidebar/sidehome.jpg";
 import toy from "../Assets/sidebar/toy.jpg";
 import sidebeauty from "../Assets/sidebar/sidebeauty.jpg";
 import { SideProductList } from "./SideProductList";
+import {NavLink} from 'react-router-dom'
 
 
 const topCategoriesData = [
@@ -26,6 +23,7 @@ const topCategoriesData = [
     imgSrc: mobileIcon,
     listData: allOffersData,
     img: mens,
+    
   },
   {
     name: "Women's Fashion",
@@ -102,9 +100,14 @@ export const HomeSidebar = (props) => {
                   <img
                     src={item.imgSrc}
                     alt={item.name}
-                    style={{ height: "28px", marginRight: "5px" }}
+                    style={{ height: "28px" }}
                   />
+                  <p>
+                    <NavLink>
+
                   {item.name}
+                    </NavLink>
+                  </p>
                   <div className="product-list-wrapper">
                     <SideProductList listData={item.listData} img={item.img} />
                   </div>
@@ -132,11 +135,8 @@ export const HomeSidebar = (props) => {
           {trendingData.map((item, i) => {
             return (
               <li key={i} className="sidebar-li">
-                <img
-                  src={searchIcon}
-                  alt="search"
-                  style={{ height: "19px", margin: "0px 5px 3px 0px" }}
-                />
+                <i className="fa-solid fa-magnifying-glass"></i>
+               
                 {item}
               </li>
             );

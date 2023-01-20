@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import '../Styles/HomeStyles/Banner.css'
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import bob from '../Assets/Banner/bob.jpg'
 import health from '../Assets/Banner/Health.jpg'
 import kurtaset from '../Assets/Banner/kurtaset.jpg'
@@ -6,10 +10,7 @@ import leftarrow from '../Assets/Banner/leftIcon.png'
 import rightarrow from '../Assets/Banner/rightIcon.png'
 import westernwear from '../Assets/Banner/westernwear.jpg'
 import kitchen from '../Assets/Banner/kitchen.jpg'
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '../Styles/Banner.css'
 
 
 const bannerCarouselData = [

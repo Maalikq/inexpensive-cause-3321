@@ -2,7 +2,7 @@ import React from "react";
 
 import locationImg from "../Assets/cards/location.jpg";
 
-import '../Styles/PinCode.css'
+import '../Styles/HomeStyles/PinCode.css'
 
 export const Pincode = () => {
   return (

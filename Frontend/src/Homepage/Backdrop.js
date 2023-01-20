@@ -1,5 +1,5 @@
 import React from "react";
-
+import  '../Styles/HomeStyles/Backdrop.css'
 
 
 export const Backdrop = ({ clicked, hideOnHover }) => {

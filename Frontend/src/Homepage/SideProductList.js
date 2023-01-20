@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-import '../Styles/SideProductList.css'
+import '../Styles/HomeStyles/SideProductList.css'
 import { SideSubList } from "./SideSubList";
 
 export const SideProductList = ({ listData, img }) => {

@@ -1,16 +1,17 @@
 export const allOffersData = [
     {
-      title: "autumn/winter special",
+      title: "FOOTWEAR",
       list: [
-        "Air Purifiers",
-        "Geysers",
-        "Socks",
-        "Air Fresheners",
-        "Blankets & Comforters",
-        "Coffee & Tea Makers",
-        "Hair Dryers",
-        "Air Conditioners",
+        "Sports Shoes",
+        "Slippers & Flip Flops",
+        "Snadals & Floaters",
+        "Formal Shoes",
+        "Loafers",
+        "Sneakers",
+        "Ethnic Footwear",
+        "Shoe Accessories"
       ],
+       
     },
     {
       title: "FESTIVE DECOR LIGHTING",

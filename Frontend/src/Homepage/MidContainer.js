@@ -3,7 +3,7 @@ import paymentIcon from "../Assets/paymentImg.png";
 import trustIcon from "../Assets/trust.png";
 import helpIcon from "../Assets/help.png";
 import shopMobileIcon from "../Assets/shop.png";
-import '../Styles/MidContainer.css'
+import '../Styles/HomeStyles/MidContainer.css'
 
 const MidContainer = () => {
   return  (

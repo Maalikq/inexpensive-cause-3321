@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/ContentFooter.css'
+import '../Styles/HomeStyles/ContentFooter.css'
 import { ContentFooterCard } from './ContentFooterCard';
 
 const contentData = [

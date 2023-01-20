@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/Footer.css";
+import "../Styles/HomeStyles/Footer.css";
 
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-container">
         <p className="footer-text">
-          Copyright © Masai School 2022, Grabdeal Private Limited (Team GrabDeal
+          Copyright © Masai School 2023, Grabdeal Private Limited (Team GrabDeal
           Private Limited Project For Learning Purpose). All Rights Reserved
         </p>
         <p className="heartlogo">

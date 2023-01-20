@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/UpperFootCard.css'
+import '../Styles/HomeStyles/UpperFootCard.css'
 export const UpperFootCard = ({icon,heading,para}) => {
     return (
         <div className="footcard">

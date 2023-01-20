@@ -1,12 +1,9 @@
-.home{
-    
-        background: #f7f7f7;
-      
+.home{ 
+      background: #f7f7f7;   
 }
 
 .upbtn {
-        display: none;
-        background: #262222 none repeat scroll 0 0;
+        background: #333 none repeat scroll 0 0;
         color: #ffff;
         font-size: 32px;
         font-weight: 400;
@@ -23,13 +20,14 @@
         cursor: pointer;
         border: none;
         padding: 0;
-      }
-
-      
+}
+     
+     
 @media only screen and (max-width: 768px) {
       
         .upbtn {
           display: inline;
+         
         }
         .upbtn:before {
           display: block;

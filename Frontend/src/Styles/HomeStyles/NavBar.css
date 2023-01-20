@@ -69,7 +69,6 @@
   }
   
   .top-bar__cart-sign {
-    width: 40%;
     display: flex;
     justify-content: flex-end;
     height: 100%;
@@ -85,26 +84,32 @@
     cursor: pointer;
   }
   
-  .top-bar__sign-in {
+  .top-bar__sign-in-wrapper {
+    display: flex;
+    align-items: center;
     color: #fff;
     border-left: 1px solid rgba(0, 0, 0, 0.07);
     height: 100%;
-    display: flex;
-    align-items: center;
     padding: 0px 25px;
     position: relative;
     cursor: pointer;
     border-radius: 3px 3px 0px 0px;
   }
+
+  .top-bar__sign-in {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
   
-  .top-bar__sign-in:hover {
+  .top-bar__sign-in-wrapper:hover {
     background: #333;
   }
   
   .sign-in-hover {
     display: none;
   }
-  .top-bar__sign-in:hover .sign-in-hover {
+  .top-bar__sign-in-wrapper:hover .sign-in-hover {
     display: block;
   }
   .trending{
@@ -127,8 +132,15 @@
     align-items: center;
     color: #fff;
     line-height: 1;
-    margin: 22px 0px 0px -20px;
+    margin: 22px 0px 0px 15px;
   
+  }
+
+  .searchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
   }
   
   @media (max-width: 1100px) {
@@ -216,6 +228,7 @@
   .top-bar-hamburger {
     position: relative;
     height: 100%;
+    display: block;
     
   }
   

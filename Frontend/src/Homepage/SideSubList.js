@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/SideSubList.css'
+import '../Styles/HomeStyles/SideSubList.css'
 
 
 export const SideSubList = ({ title, list }) => {

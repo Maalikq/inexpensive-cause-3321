@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/Download.css'
+import '../Styles/HomeStyles/Download.css'
 import downloadImg from "../Assets/Home/downloadImg.png";
 import appStoreImg from "../Assets/Home/appStore.png";
 import playStoreImg from "../Assets/Home/playstore.png";

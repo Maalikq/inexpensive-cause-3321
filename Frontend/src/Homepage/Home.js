@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../Styles/Home.css'
+import '../Styles/HomeStyles/Home.css'
 import upbtnicon from  '../Assets/Products/upbtnicon.png'
 import {TopNav} from './TopNav'
 import { NavBar } from './NavBar';
@@ -18,12 +18,20 @@ import Footer from "./Footer";
 
 export const  Home=()=> {
   const [showHamburger, setShowHamburger] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY >= 850 && !showHamburger) {
         setShowHamburger(true);
       } else {
         setShowHamburger(false);
+      }
+      if(window.scrollY >300){
+        setIsVisible(true);
+        
+      }else{
+        setIsVisible(false);
+
       }
     });
 
@@ -45,11 +53,14 @@ export const  Home=()=> {
      <FooterLinks />
      <About />
      <Footer />
-     <a href="#root">
+      {isVisible && (
+     <a className="btnup" href="#root">
             <button className="upbtn" type="button" title="Hit to Top">
-              <img  src={upbtnicon} alt="btnicon"/>            
+              <img  src={upbtnicon} alt="btnicon" style={{margin:"auto"}} />            
             </button>
           </a>
+
+      )}
     </div>
   );
 }

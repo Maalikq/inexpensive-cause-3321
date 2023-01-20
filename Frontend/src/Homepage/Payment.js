@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/Payment.css'
+import '../Styles/HomeStyles/Payment.css'
 
 import PaymentImg from "../Assets/Home/paymentsec.png";
 import facebook from "../Assets/Home/facebook.png";
@@ -12,7 +12,7 @@ import whatsapp from "../Assets/Home/whatsapp.png";
 
 
 
-const socialIcons = [facebook, twitter,instagram,linkedin,youtube,telegram,whatsapp];
+const socialIcons = [facebook ,twitter,instagram,linkedin,youtube,telegram,whatsapp];
 
 export const Payment = () => {
   return (
@@ -25,8 +25,8 @@ export const Payment = () => {
         <div className="payment-social">
           <p>CONNECT</p>
           <nav>
-            {socialIcons.map((img, i) => {
-              return <img className="socialIcon" key={i} src={img} alt="social" />;
+            {socialIcons.map((img, idx) => {
+              return <img className="socialIcon" key={idx} src={img} alt="social" />;
             })}
           </nav>
         </div>
@@ -34,5 +34,6 @@ export const Payment = () => {
     </div>
   );
 };
+
 
 

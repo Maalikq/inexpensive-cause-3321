@@ -5,6 +5,9 @@
     margin-bottom: 20px;
     position: relative;
   }
+  .sidebar__top{
+    text-align: left;
+  }
   
   .sidebar ul {
     list-style: none;
@@ -16,20 +19,31 @@
     font-size: 14px;
     margin: 15px;
     color: #333;
+    text-align: left;
   }
   
   .sidebar-li {
     font-size: 12px;
     color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sidebar-li i{
+    font-size: 8px;
   }
   
   .sidebar a {
-    margin: 15px;
     font-size: 12px;
     text-decoration: none;
+    display: block;
     margin-left: 17px;
+    cursor: pointer;
+    text-align: left;
   }
-  
+  .sidebar__more{
+    text-align: left;
+  }
   .sidebar a:hover {
     color: #666;
   }
@@ -40,6 +54,7 @@
   
   .sidebar__trending li {
     margin: 8px 15px;
+    cursor: pointer;
   }
   
   .sidebar-qr {

@@ -2,7 +2,7 @@
     display: flex;
     background: #fff;
   }
-  
+ 
   .mobile-only {
     display: none;
   }

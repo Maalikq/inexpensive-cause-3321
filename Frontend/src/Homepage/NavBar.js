@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../Styles/NavBar.css'
+import '../Styles/HomeStyles/NavBar.css'
 
 import Grabdeal from '../Assets/GRABDEAL.png'
 import searchIcon from "../Assets/Home/searchIcon.png";
@@ -68,14 +68,12 @@ export const NavBar = ({ showHamburger }) => {
                 </ul>
                 <Backdrop clicked={togglesearch} />
               </div>
-              <button onClick={togglesearch}>
+              <button className={"searchBtn"} onClick={togglesearch}>
                 <img
                   src={searchIcon}
                   alt="search"
                   style={{
                     height: "16px",
-                    marginRight: "8px",
-                    marginBottom: "3px",
                   }}
                 />
                 <span>Search</span>
@@ -93,16 +91,16 @@ export const NavBar = ({ showHamburger }) => {
                 />
               </div>
             </div>
-            <div className="top-bar__sign-in">
-              <div>
+            <div className="top-bar__sign-in-wrapper">
+              <div  className="top-bar__sign-in">
                 <p>
-                  Sign in{" "}
-                  <img
-                    src={userIcon}
-                    alt="profile user"
-                    style={{ height: "30px", marginLeft: "5px" }}
-                  />
+                  Sign in
                 </p>
+                <img
+                  src={userIcon}
+                  alt="profile user"
+                  style={{ height: "30px", marginLeft: "5px" }}
+                />
               </div>
               <div className="sign-in-hover">
                 <SideSignin />

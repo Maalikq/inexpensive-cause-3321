@@ -4,6 +4,10 @@
   font-size: 13px;
   color: #777;
 }
+.footerlower-link-title{
+
+  font-weight: bold;
+}
 
 .footerlower-link-a:hover {
   color: #555;

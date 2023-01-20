@@ -4,6 +4,9 @@
     width: 25%;
     cursor: pointer;
   }
+  .product-card__container{
+    text-align: left;
+  }
   .product-card:hover {
     border-radius: 3px;
     text-decoration: none;

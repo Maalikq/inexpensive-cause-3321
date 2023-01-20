@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/ContentFooterCard.css'
+import '../Styles/HomeStyles/ContentFooterCard.css'
 
 export const ContentFooterCard = ({heading,links}) => {
     return (

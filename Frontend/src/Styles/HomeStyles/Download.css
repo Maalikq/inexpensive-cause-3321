@@ -4,12 +4,11 @@
   }
   
   .download-container {
-    max-width: 1300px;
     margin: 0 auto;
     padding: 0px 20px;
     display: flex;
     justify-content: space-around;
-    background-image: url("../Assets/Home/leaves.png");
+    background-image: url("../../Assets/Home/leaves.png");
     background-position: right top;
     background-repeat: no-repeat;
   }

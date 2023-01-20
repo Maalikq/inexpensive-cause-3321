@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/UpperContFooter.css'
+import '../Styles/HomeStyles/UpperContFooter.css'
 import paymentIcon from '../Assets/Home/paymentImg.png'
 import trustIcon from '../Assets/Home/trust.png'
 import helpIcon from '../Assets/Home/help.png'

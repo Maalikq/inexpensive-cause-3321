@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 
 
-import '../Styles/HomeMid.css'
+import '../Styles/HomeStyles/HomeMid.css'
 import { HomeSidebar } from "./HomeSidebar";
 import { Banner } from "./Banner";
 import { ProductCaro } from "./ProductCaro";

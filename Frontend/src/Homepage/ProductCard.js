@@ -2,7 +2,7 @@ import React from "react";
 
 import ratingIcon from "../Assets/cards/star.png";
 import heartIcon from "../Assets/cards/heart.png";
-import '../Styles/ProductCard.css'
+import '../Styles/HomeStyles/ProductCard.css'
 
 
 export const ProductCard = ({ imgSrc, alt, title, oldPrice, newPrice, offer }) => {

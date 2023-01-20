@@ -1,31 +1,46 @@
-import React from "react";
-
-import user from "../Assets/sidebar/user.svg";
-import order from "../Assets/sidebar/order.svg";
-import shortlist from "../Assets/sidebar/shortlist.png";
-
-
-import '../Styles/SideSignin.css'
+import React, { useEffect, useState } from "react";
+import '../Styles/HomeStyles/SideSignin.css'
+import { RegisterButton } from "./RegisterButton";
+import { LoginButton } from "./LoginButton";
+import { Button } from "@chakra-ui/react";
 
 export const SideSignin = () => {
+   const token = localStorage.getItem('token');
+   const [random,setrandom] = useState(0)
+   const handleLogout =()=>{
+    localStorage.removeItem('token');
+    setrandom(random+1)
+
+   }
+   useEffect(()=>{
+
+   },[random])
   return (
     <div className="signin-card">
       <ul>
         <li>
-          <img className="signicon" src={user} alt="account" /> Your Account
+          <i className="fa-solid fa-user"></i>
+          <p>Your Account</p>
         </li>
         <li>
-          <img className="signicon" src={order} alt="order" style={{ marginRight: "5px" }} />
+        <i className="fa-solid fa-box"></i>
+          
+          <p>
           Your Orders
+          </p>
         </li>
         <li>
-          <img className="signicon" src={shortlist} alt="shortlist" style={{ marginRight: "5px" }} />
+        <i className="fa-regular fa-heart"></i>
+          
+          <p>
           Shortlist
+          </p>
         </li>
       </ul>
-      <p>If you are a new user</p>
-      <p>Register</p>
-      <button>LOGIN</button>
+      {token ? <Button onClick={handleLogout}>Logout</Button> :<><p>If you are a new user</p>
+      <RegisterButton/>
+      <LoginButton/></>}
+      
     </div>
   );
 };

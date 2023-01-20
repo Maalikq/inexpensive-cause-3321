@@ -4,22 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import chappal from '../Assets/Products/chappal.jpg'
 import mala from '../Assets/Products/mala.jpg'
 import chopper from '../Assets/Products/chopper.jpg'
-import glove from '../Assets/Products/glove.jpg'
+import socks from '../Assets/Products/socks.jpg'
 import trim from '../Assets/Products/trim.jpg'
 import wallet from '../Assets/Products/wallet.jpg'
-import watch from '../Assets/Products/watch.jpg'
-import woodenspat from '../Assets/Products/woodenspa.jpg'
+import tshirt from '../Assets/Products/tshirt.jpg'
+import lighter from '../Assets/Products/lighter.jpg'
 import leftarrow from '../Assets/Banner/leftIcon.png'
 import rightarrow from '../Assets/Banner/rightIcon.png'
 import { ProductCard } from './ProductCard';
-import '../Styles/ProductCaro.css'
+import '../Styles/HomeStyles/ProductCaro.css'
 
 const productsCarouselData = [
     [
       {
         src: chappal,
         alt: "chappal",
-        title: "ASIAN Brown Daily Slippers",
+        title: "ASIAN Brown Flip Flops",
         oldPrice: "499",
         newPrice: "433",
         offer: "13%",
@@ -28,7 +28,7 @@ const productsCarouselData = [
         src: mala,
         alt: "mala",
         title:
-          "Shiv Shakti Kavach 5 Mukhi Rudraksha Mala With Shiv Trishul & Damru Brass Necklace Brass Brass Pendant Set",
+          "Bhawna Collection Loard Shiv Trishul Damru Locket With Puchmukhi Rudraksha Mala Gold-plated Brass, Wood For Men & Women",
         oldPrice: "399",
         newPrice: "194",
         offer: "51%",
@@ -36,16 +36,16 @@ const productsCarouselData = [
       {
         src: wallet,
         alt: "wallet",
-        title: "PRd PU Tan Casual regular Wallet",
+        title: "DARK ROMANCE - Beige Faux Leather Men's Zip Around Wallet ( Pack of 1 )",
         oldPrice: "999",
         newPrice: "191",
         offer: "81%",
       },
       {
-        src: watch,
-        alt: "watch",
+        src: tshirt,
+        alt: "tshirt",
         title:
-          "David Miller White Dial Tan Brown PU Leather Strap Men's Watch - DMRCM4C",
+          "Veirdo - Multicolor Cotton Regular Fit Men's T-Shirt ( Pack of 1 )",
         oldPrice: "399",
         newPrice: "299",
         offer: "25%",
@@ -56,32 +56,32 @@ const productsCarouselData = [
         src: trim,
         alt: "trim",
         title:
-          "Exerciser Single Spring Tummy Trimmer Best for Home Exercise waist Trimmer",
+          "Battlestar Tummy Trimmer Double String Abdominal Exercise- Black",
         oldPrice: "699",
         newPrice: "313",
         offer: "55%",
       },
       {
-        src: glove,
-        alt: "golve",
+        src: socks,
+        alt: "socks",
         title:
-          "Shopoholic Magic Silicone Srub Rubber Universal Size Cleaning Glove 1 Pair- Reusable",
-        oldPrice: "999",
-        newPrice: "460",
-        offer: "54%",
+          "Stay Healthy - Foot Protector (Free Size)",
+        oldPrice: "499",
+        newPrice: "110",
+        offer: "78%",
       },
       {
         src: chopper,
         alt: "chopper",
-        title: "NAIYUE Plastic chopper",
+        title: "Bentag kitchenware Vegetable & Fruit Clever Cutter Stainless Steel Vegetable Scissor ",
         oldPrice: "499",
         newPrice: "175",
         offer: "65%",
       },
       {
-        src: woodenspat,
-        alt: "Wooden spatula",
-        title: "WORTHY SHOPPEE Wood Spatula 5 Pcs",
+        src: lighter,
+        alt: "lighter",
+        title: "Maxbell USB Rechargeable Electronic Flameless Lighter",
         oldPrice: "299",
         newPrice: "149",
         offer: "50%",
@@ -96,6 +96,7 @@ export const ProductCaro = () => {
         <Carousel
           prevIcon={
             <img
+            className='prevbtn'
               src={leftarrow}
               alt="prev icon"
               style={{

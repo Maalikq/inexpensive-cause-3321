@@ -1,6 +1,6 @@
 import React from "react";
 import mb from '../Assets/Home/mobile.png'
-import "../Styles/TopNav.css";
+import "../Styles/HomeStyles/TopNav.css";
 
 export const TopNav = () => {
   return (
@@ -31,9 +31,12 @@ export const TopNav = () => {
                     alt="mobileIcon"
                     style={{ height: "20px", margin: "0px 3px 2px 0px" }}
                   />
-                  Download App
+                  
                 </a>
               </li>
+                <p className="downloadApp">
+                Download App
+                </p>
             </ul>
           </nav>
         </div>
