@@ -2,9 +2,12 @@ import styles from "./shoes.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Button, Stack } from '@chakra-ui/react'
 //import { getProductData } from "../redux/action";
 import MensCard from "./shoes.card";
-import { Button } from "@chakra-ui/react";
+import ScrollToTop from "react-scroll-to-top";
+import {BsArrowUpCircleFill} from "react-icons/bs"
+
 
 const MensProducts = () => {
   const [products ,setProducts] = useState([]) ;
@@ -38,6 +41,18 @@ const MensProducts = () => {
  
   return (
     <div>
+      <div className={styles.trendingSearch}>
+        <ul className={styles.mensTredingul}>
+          <li>Treading Searches</li>
+          <li>Shoes for men</li>
+          <li>Sport Shoes for mens</li>
+          <li>Saree</li>
+          <li>tShirt</li>
+          <li>Wall sticker</li>
+          <li>Kurti set</li>
+          <li>Kitchen products</li>
+        </ul>
+      </div>
       <div className={styles.sortdiv}>
         <select onChange={handleSelect}>
           <option value="">Sort by:</option>
@@ -64,6 +79,12 @@ const MensProducts = () => {
           </div>
         ))}
       </div>
+      <ScrollToTop
+        smooth
+        width="15"
+        component={<BsArrowUpCircleFill color="#5A5A5A" size={40} />}
+        color="grey"
+      />
     </div>
   );
 };
