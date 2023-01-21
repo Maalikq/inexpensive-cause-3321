@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Select, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Image, Select, Text } from '@chakra-ui/react'
 import React from 'react'
 import "./review.css"
 
@@ -38,9 +38,9 @@ const Review = () => {
       
   return (
     <div>
-        <Box  color="gray.500" width="100%" border="1px solid blue">
+        <Box  color="gray.500" width="100%" >
           
-          <Flex className='tablerow'  border="1px solid yellow" p={3} justifyContent="space-between"  backgroundColor="gray.100">
+          <Flex className='tablerow'   p={3} justifyContent="space-between"  backgroundColor="gray.100">
            <Box>Item Details</Box>
            <Box ml={12}>Quantity</Box>
            <Box>Delivery Options</Box>
@@ -58,8 +58,8 @@ const Review = () => {
 
                    </Box>
 
-                   <Box border="1px solid black">
-                   <Select border="1px solid black">
+                   <Box >
+                   <Select >
                     <option value="1">1</option>
                     <option value="1">2</option>
                     <option value="1">3</option>
@@ -75,7 +75,24 @@ const Review = () => {
             }
 
           </Box>
+         <Box display="flex" border="1px solid black" p={5} mt={5} flexDirection={{lg:"row",md:"column",sm:"column"}} justifyContent="space-between">
+           <Box>
+           Have a promo code? Apply 
+           </Box>
 
+           <Box >
+            <Flex  gap={10}>
+              <Heading as="h3" size="md">You Pay:</Heading>
+
+              <Text color="black" fontSize="lg">Rs. {"daldena"}</Text>
+
+            </Flex>
+
+            <Button width="100%" color="white" backgroundColor="#E40046" mt={5}>PROCEED TO PAYMENT</Button>
+
+           </Box>
+
+         </Box>
 
         </Box>
     </div>

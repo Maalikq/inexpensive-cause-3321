@@ -46,41 +46,41 @@ const Address = () => {
     }
   return (
     <div>
-     <Box border="1px solid black" color="gray" width="70%" p={8}>
+     <Box  color="gray" width="70%" p={8}>
         
      <FormControl>
     <Flex justifyContent="space-between" gap={5}>
-    <FormLabel border="1px solid red" height="40px" width="70%">Pincode</FormLabel>
+    <FormLabel  height="40px" width="70%">Pincode</FormLabel>
     <Input placeholder='Pin Code' name='pincode' value={add.pincode} onChange={handlechange} type="number" />
     </Flex>
 
     <Flex justifyContent="space-between" gap={5} mt={2}>
-    <FormLabel border="1px solid red" height="40px" width="70%">Name</FormLabel>
+    <FormLabel  height="40px" width="70%">Name</FormLabel>
     <Input placeholder='Full Name' name='name' value={add.name} onChange={handlechange} type="text" />
     </Flex>
 
     <Flex justifyContent="space-between" gap={5} mt={2}>
-    <FormLabel border="1px solid red" height="40px" width="70%">Address</FormLabel>
+    <FormLabel  height="40px" width="70%">Address</FormLabel>
     <Textarea placeholder='Flat/House No. Colony/Street No.' name='address' value={add.address} onChange={handlechange} type="text" />
     </Flex>
 
     <Flex justifyContent="space-between" gap={5} mt={2}>
-    <FormLabel border="1px solid red" height="40px" width="70%">Locality/Landmark</FormLabel>
+    <FormLabel  height="40px" width="70%">Locality/Landmark</FormLabel>
     <Input placeholder='Eg. Near Appolo Hospital' name='locality' value={add.locality} onChange={handlechange} type="text" />
     </Flex>
 
     <Flex justifyContent="space-between" gap={5} mt={2}>
-    <FormLabel border="1px solid red" height="40px" width="70%">City</FormLabel>
+    <FormLabel  height="40px" width="70%">City</FormLabel>
     <Input placeholder='City' name='city' value={add.city} onChange={handlechange} type="text" />
     </Flex>
 
     <Flex justifyContent="space-between" gap={5} mt={2}>
-    <FormLabel border="1px solid red" height="40px" width="70%">State</FormLabel>
+    <FormLabel  height="40px" width="70%">State</FormLabel>
     <Input placeholder='State' name='state' value={add.state} onChange={handlechange} type="text" />
     </Flex>
 
     <Flex justifyContent="space-between" gap={5} mt={2}>
-    <FormLabel border="1px solid red" height="40px" width="70%">Mobile Number</FormLabel>
+    <FormLabel  height="40px" width="70%">Mobile Number</FormLabel>
     <Input placeholder='Mobile No.' name='mob' value={add.mob} onChange={handlechange} type="number" />
     </Flex>
 
