@@ -1,0 +1,30 @@
+.banner-carousel__btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0px 0px;
+    background: #fff;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 4px 17px 0 rgb(0 0 0 / 10%);
+    border-radius: 3px;
+  }
+  
+  .banner-carousel__button {
+    outline: none;
+    border: none;
+    background: #fff;
+    flex: 1;
+    padding: 15px 0px;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .banner-carousel__button.active {
+    border-bottom: 2px solid #333;
+  }
+  
+  @media (max-width: 800px) {
+    .banner-carousel__btn-container {
+      display: none;
+    }
+  }
+  

@@ -7,6 +7,7 @@ import SkinCard from "./Skin.card";
 import { Button } from "@chakra-ui/react";
 import ScrollToTop from "react-scroll-to-top";
 import { BsArrowUpCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Skin = () => {
   const [products, setProducts] = useState([]);
@@ -73,8 +74,8 @@ const Skin = () => {
       </div>
       <div className={styles.container}>
         {products?.map((item) => (
-          <div key={item._id} className={styles.allDataGrid}>
-            <SkinCard {...item} />
+         <div key={item._id} className={styles.allDataGrid}>
+            <Link to={`/products/${item._id}`}> <SkinCard {...item} /></Link>
           </div>
         ))}
       </div>

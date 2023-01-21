@@ -1,39 +1,59 @@
 import { Box, Button, Flex, Heading, Image, Select, Text } from '@chakra-ui/react'
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import "./review.css"
 
 const Review = () => {
 
-    const data=[
-         { id:1, 
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name rteraf",
-          sizes:"xl",
-          discounted_price:"584",
-        },
-        {
-            id:2,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name",
-          sizes:"xl",
-          discounted_price:"584",
-        },
-        {
-            id:3,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name",
-          sizes:"xl",
-          discounted_price:"584",
-        },
-        {
-            id:4,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name",
-          sizes:"xl",
-          discounted_price:"584",
-        }
+   
     
-      ]
+      const [cart, setCart] = React.useState([]);
+      const [qty, setqty] = useState(1);
+
+
+      const token=localStorage.getItem("token");
+
+   React.useEffect(()=>{
+    cartHandler();
+           
+   
+
+   },[qty])
+  
+  const cartHandler = () => {
+
+    axios.get("https://snapdealbackend.onrender.com/carts",{
+      headers:{
+        "token":token
+      }
+  
+  }
+    ).then(res=>{setCart(res.data.products)})
+
+    
+   
+  };
+
+  const qtychange=(val,prodid)=>{
+    
+    
+
+    axios.patch("https://snapdealbackend.onrender.com/carts/update",
+
+      {
+        productId:prodid,
+        quntity:val
+      },
+      {
+      headers:{
+        "token":token
+      },}
+  
+  
+    ).then(()=>setqty(val));
+          
+   
+  }
 
       
   return (
@@ -50,24 +70,25 @@ const Review = () => {
 
           <Box height="400px" overflow="scroll">
             {
-                data.map((el)=>
-                <Flex key={el.id} justifyContent="space-between"  p={2} border="1px solid black">
-                    <Box display="flex" width="25%" border="1px solid black">
-                   <Image src={el.images[0]} alt='el.title' width={{lg:"40%",sm:"0%",md:"0%"}}/>
-                   <Text>{el.title}</Text>
+                cart.map((el)=>
+                <Flex key={el.id} justifyContent="space-between"  p={2} >
+                    <Box display="flex" width="25%" >
+                   <Image src={el.product.image} alt='el.title' width={{lg:"40%",sm:"0%",md:"0%"}}/>
+                   <Text>{el.product.name}</Text>
 
                    </Box>
 
                    <Box >
-                   <Select >
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
+                   <Select onChange={(e) => qtychange(e.target.value,el._id)}>
+                   <option value={el.quntity}>{el.quntity}</option>
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
                    </Select>
                    </Box>
 
                    <Box>25 jan to 25 jan</Box>
-                    <Box>Total: {el.discounted_price}</Box>
+                    <Box>Total: {el.product.price * el.quntity}</Box>
                    
 
                 </Flex>
@@ -84,7 +105,7 @@ const Review = () => {
             <Flex  gap={10}>
               <Heading as="h3" size="md">You Pay:</Heading>
 
-              <Text color="black" fontSize="lg">Rs. {"daldena"}</Text>
+              <Text color="black" fontSize="lg">Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</Text>
 
             </Flex>
 

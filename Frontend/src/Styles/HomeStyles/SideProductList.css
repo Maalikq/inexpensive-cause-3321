@@ -1,0 +1,27 @@
+.product-list {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 900px;
+    background: #fff;
+    z-index: 10;
+  }
+  
+  .product-list-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-list-column {
+    padding: 10px 0px 10px 20px;
+    border-left: 1px solid #e2e2e2;
+  }
+  
+  .product-list-column:first-of-type {
+    border: none;
+  }
+  .product-list-column:last-of-type {
+    border: none;
+    padding: 10px;
+  }
+  

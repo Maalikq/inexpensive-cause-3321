@@ -1,0 +1,121 @@
+.sidebar-container {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 4px 17px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .sidebar__top{
+    text-align: left;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-h2 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 15px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .sidebar-li {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sidebar-li i{
+    font-size: 8px;
+  }
+  
+  .sidebar a {
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+    margin-left: 17px;
+    cursor: pointer;
+    text-align: left;
+  }
+  .sidebar__more{
+    text-align: left;
+  }
+  .sidebar a:hover {
+    color: #666;
+  }
+  
+  .sidebar__trending {
+    margin-bottom: 0px !important;
+  }
+  
+  .sidebar__trending li {
+    margin: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .sidebar-qr {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .qr-img {
+    width: 30%;
+  }
+  
+  .qr-content {
+    margin-left: 20px;
+  }
+  
+  .qr-info {
+    line-height: 1.3;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 9px;
+  }
+  
+  .qr-download {
+    font-size: 11px;
+    color: #999;
+  }
+  
+  .sidebar__trending li {
+    margin: 5px 15px;
+  }
+  
+  .sidebar__trending li:last-of-type {
+    padding-bottom: 15px;
+  }
+  
+  .product-list-wrapper {
+    display: none;
+  }
+  
+  .sidebar__more-li:hover .product-list-wrapper,
+  .sidebar__top-li:hover .product-list-wrapper {
+    display: block;
+  }
+  
+  .sidebar__more-li,
+  .sidebar__top-li {
+    padding: 6px 15px;
+    margin: 0;
+  }
+  .sidebar__more-li,
+  .sidebar__top-li {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 2px solid transparent;
+  }
+  .sidebar__more-li:hover,
+  .sidebar__top-li:hover {
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    border-left: 2px solid #e40046;
+  }
+  

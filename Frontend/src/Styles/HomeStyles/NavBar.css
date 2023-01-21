@@ -1,0 +1,254 @@
+.top-bar {
+    background: #e40046;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    width: 100%;
+    padding-top: 5px;
+  }
+  
+  .top-bar__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0px 20px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .top-bar__logo {
+    cursor: pointer;
+    width: 13%;
+  }
+  
+  .top-bar__logo img {
+    width: 100%;
+  }
+  
+  .top-bar-hamburger {
+    width: 5%;
+    color: #e40046;
+  }
+  
+  .top-bar__side-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .top-bar__searchbar {
+    width: 60%;
+  }
+  
+  .top-bar__searchbar__container {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  
+  .top-bar__searchbar__container input {
+    width: 75%;
+    outline: none;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px 0px 0px 2px;
+    font-size: 14px;
+  }
+  
+  .top-bar__searchbar__container button {
+    width: 25%;
+    outline: none;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 0px 2px 2px 0px;
+  }
+  
+  .top-bar__cart-sign {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  
+  .top-bar__cart {
+    color: #fff;
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 25px;
+    cursor: pointer;
+  }
+  
+  .top-bar__sign-in-wrapper {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    height: 100%;
+    padding: 0px 25px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px 3px 0px 0px;
+  }
+
+  .top-bar__sign-in {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .top-bar__sign-in-wrapper:hover {
+    background: #333;
+  }
+  
+  .sign-in-hover {
+    display: none;
+  }
+  .top-bar__sign-in-wrapper:hover .sign-in-hover {
+    display: block;
+  }
+  .trending{
+    width: 10px;
+  }
+  .GiHamburgerMenu:hover {
+   
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+  
+  .GiHamburgerMenu{
+    height: 25px;
+    width: 30px;
+    font-size: 21px;
+    font-weight: 300;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    line-height: 1;
+    margin: 22px 0px 0px 15px;
+  
+  }
+
+  .searchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  @media (max-width: 1100px) {
+    .top-bar-hamburger {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .top-bar {
+      padding: 5px 0px;
+    }
+    .top-bar__cart-sign {
+      display: none;
+    }
+    .top-bar__logo {
+      width: 20%;
+    }
+    .top-bar__side-content {
+      width: 55%;
+    }
+    .top-bar__searchbar {
+      width: 100%;
+    }
+    .top-bar__searchbar button span {
+      display: none;
+    }
+    .top-bar__searchbar button img {
+      margin-left: 5px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .top-bar__logo {
+      width: 25%;
+    }
+    .top-bar__side-content {
+      width: 70%;
+    }
+  }
+  
+  .search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 75%;
+    box-shadow: 0 4px 17px 0 rgb(0 0 0 / 10%);
+  }
+  
+  .search-dropdown ul {
+    background: #fff;
+    width: 100%;
+    list-style: none;
+  }
+  
+  .search-dropdown li {
+    padding: 10px 20px;
+    line-height: 17px;
+    font-size: 13px;
+    text-transform: capitalize;
+    color: #333;
+    cursor: pointer;
+    border-radius: 0px 0px 3px 3px;
+  }
+  
+  .search-dropdown li:first-child {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    padding-left: 23px;
+    color: #999;
+    padding-left: 15px;
+  }
+  
+  .search-dropdown li:first-child:hover {
+    background: #fff !important;
+    color: #999 !important;
+  }
+  
+  .search-dropdown li:hover {
+    background: #eee;
+    color: #111;
+  }
+  
+  .top-bar-hamburger {
+    position: relative;
+    height: 100%;
+    display: block;
+    
+  }
+  
+  .top-bar-hamburger:hover {
+    background: #fff;
+   
+  }
+  .top-bar-hamburger:hover .GiHamburgerMenu {
+    color: #e40046;
+  }
+  
+  .hamburger-sidebar {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    width: 200px;
+    display: none;
+  }
+  
+  .top-bar-hamburger:hover .hamburger-sidebar {
+    display: block;
+  }
+  

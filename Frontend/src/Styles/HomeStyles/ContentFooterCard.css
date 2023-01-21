@@ -1,0 +1,32 @@
+ul {
+    list-style: none;
+  }
+  
+  .content-card {
+    margin-bottom: 20px;
+  }
+  
+  .content-card-heading {
+    font-size: 14px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #344c55;
+  }
+  
+  .content-card-li {
+    height: 21px;
+  }
+  
+  .content-card-a {
+    color: #a5a5a5;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .content-card-a:hover {
+    color: #666;
+  }
+  

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav {
+  background: #c7003d;
+  position: relative;
+  z-index: 100;
+  top:0
+}
+
+.top-nav-container {
+  max-width: 1300px;
+  height: 30px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.top-nav-title {
+  color: #fff;
+  font-size: 12px;
+}
+
+.top-nav-list {
+  display: flex;
+  list-style: none;
+  gap:10px;
+  margin: 0;
+}
+
+.top-nav-list a {
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  margin: auto;
+  text-decoration: none;
+}
+.downloadApp{
+  color: #fff;
+  font-size: 12px;
+  
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .top-nav {
+    display: none;
+  }
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.yourmain{
+    border: 1px solid red;
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+.my-account {
+    border: 1px solid red;
+    width: 20%;
+   
+  }
+  
+  .my-account h1 {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 18px;
+    font-family: bold;
+    line-height: 23px;
+    color: #e40046;
+  }
+  
+  .welcome-message {
+    display: flex;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .icon{
+    background-color: #908d8e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .welcome{
+    text-align: left;
+  }
+  .name{
+    padding-left: 5px;
+  }
+  
+  .username {
+    font-weight: bold;
+    padding: 0px 25px;
+  }
+  .logout-message{
+    
+    text-align: center;
+    color: black;
+    background-color: #F2F9FF;
+    border: 1px solid #DFEFFF;
+    text-align: justify;
+    padding: 10px 20px;
+  
+    
+  }
+  .logout-message a {
+    color: blue;
+    text-transform: uppercase;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  li ul {
+    margin-left: 20px;
+  }
+  

@@ -1,4 +1,5 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertIcon, Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
+import axios from 'axios';
 import React, { useState } from 'react'
 import Address from './Address';
 import Pay from './Pay';
@@ -10,6 +11,35 @@ const Checkout = () => {
     const [add,setadd]=useState(false);
     const [review,setreview]=useState(true);
     const [pay,setpay]=useState(false);
+
+
+    const [cart, setCart] = React.useState([]);
+   
+
+
+    const token=localStorage.getItem("token");
+
+ React.useEffect(()=>{
+  cartHandler();
+         
+ 
+
+ },[])
+
+const cartHandler = () => {
+
+  axios.get("https://snapdealbackend.onrender.com/carts",{
+    headers:{
+      "token":token
+    }
+
+}
+  ).then(res=>{setCart(res.data.products)})
+
+  
+ 
+};
+
 
     const data=[
         {
@@ -153,16 +183,16 @@ const Checkout = () => {
     </Box>
 
     <Box color="grey" p={5} backgroundColor="gray.50" width={{lg:"25%",sm:"100%",md:"60%"}} >
-       <Text>SUMMARY (2 items)</Text>
+       <Text>SUMMARY {cart.length} Items</Text>
        
        <Box textAlign="left" height="400px" overflow="scroll" p={5}  mt={2}>
-        {data.map((el)=>
+        {cart.map((el)=>
         <div key={el.id}>
-           <Text color="gray.600">{el.title}</Text>
+           <Text color="gray.600">{el.product.name}</Text>
 
            <Flex justifyContent="space-between" p={2}>
-            <Text>Quantity: {el.qty}</Text>
-            <Text>Rs.{el.discounted_price}</Text>
+            <Text>Quantity: {el.quntity}</Text>
+            <Text>Rs.{el.product.price}</Text>
            </Flex>
             <Divider/>
         </div>
@@ -171,7 +201,7 @@ const Checkout = () => {
 
        <Flex justifyContent="space-between" mt={5} >
         <Text>Total:</Text>
-        <Text>Rs.{"daldena bad me"}</Text>
+        <Text>Rs.{cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</Text>
       </Flex>
       <Flex justifyContent="space-between" mt={4}>
         <Text>Delivery Charges:</Text>
@@ -181,7 +211,7 @@ const Checkout = () => {
 
       <Flex justifyContent="space-between" mt={4}>
         <Heading as="h2" size="md">You Pay</Heading>
-        <Heading as="h2" size="md" color="black">Rs.{"daldena"}</Heading>
+        <Heading as="h2" size="md" color="black">Rs.{cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</Heading>
       </Flex>
       <Divider color="grey" mt={3}/>
 

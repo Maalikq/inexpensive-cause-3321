@@ -64,6 +64,8 @@ const Cart = () => {
   const [cart, setCart] = React.useState([]);
   const [totalRs, setTotalRs] = React.useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const [qty, setqty] = useState(1);
   
   const navigate = useNavigate();
   // let { user, setUser } = useContext(UserProvider);
@@ -91,50 +93,52 @@ const Cart = () => {
 
   }
 
-  const data=[
-    {
-      images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-      title:"hrx item name",
-      sizes:"xl",
-      discounted_price:"584",
-    },
-    {
-      images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-      title:"hrx item name",
-      sizes:"xl",
-      discounted_price:"584",
-    },
-    {
-      images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-      title:"hrx item name",
-      sizes:"xl",
-      discounted_price:"584",
-    },
-    {
-      images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-      title:"hrx item name",
-      sizes:"xl",
-      discounted_price:"584",
-    }
-
-  ]
+  
+  const token=localStorage.getItem("token");
 
    React.useEffect(()=>{
-    cartHandler(data);
+    cartHandler();
+           
+   
 
-   },[])
+   },[qty])
   
-  const cartHandler = (data) => {
-    let totalPrice = 0;
-    for (let item of data) {
-      totalPrice += Number(item.discounted_price);
-    }
-    setTotalRs(totalPrice);
-    setCart(data);
+  const cartHandler = () => {
+
+    axios.get("https://snapdealbackend.onrender.com/carts",{
+      headers:{
+        "token":token
+      }
+  
+  }
+    ).then(res=>{setCart(res.data.products)})
+
+    
+   
   };
 
-  
+  const qtychange=(val,prodid)=>{
+    
+    
 
+    axios.patch("https://snapdealbackend.onrender.com/carts/update",
+
+      {
+        productId:prodid,
+        quntity:val
+      },
+      {
+      headers:{
+        "token":token
+      },}
+  
+  
+    ).then(()=>setqty(val));
+          
+   
+  }
+  
+  
 
   const checkout=()=>{
     onClose();
@@ -214,7 +218,7 @@ const Cart = () => {
                 <h4>
                   Shooping Cart{" "}
                   <span style={{ fontSize: "1rem", color: "rgb(132,132,132)" }}>
-                    (1Item)
+                     {cart.length} Item
                   </span>
                 </h4>
               </div>
@@ -257,9 +261,13 @@ const Cart = () => {
                 {cart.map((item, ind) => (
                 <CartView
                   product={item}
+                  qtychange={qtychange}
                   key={ind}
                   
+
                 />
+               
+
               ))}
             </div>
 
@@ -272,7 +280,7 @@ const Cart = () => {
               <div>
                 <div style={{ display: "flex" }}>
                   <div>Sub Total: </div>
-                  <div style={{ marginLeft: "auto" }}>Rs. {totalRs}</div>
+                  <div style={{ marginLeft: "auto" }}>Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</div>
                 </div>
                 <div style={{ display: "flex" }}>
                   <div>Delivery Charges: </div>
@@ -287,7 +295,7 @@ const Cart = () => {
               onClick={checkout}
                style={{ fontSize:"15px",fontWeight:"bold" }}
               >
-                PROCEED TO PAY Rs. {totalRs}
+                PROCEED TO PAY Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}
               </div>
             </div>
           </div>
