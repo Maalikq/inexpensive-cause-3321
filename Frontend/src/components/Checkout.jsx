@@ -1,13 +1,15 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertIcon, Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Address from './Address';
+import Pay from './Pay';
 import Review from './Review';
 
 const Checkout = () => {
 
     const [login,setlogin]=useState(false);
     const [add,setadd]=useState(false);
-    const[review,setreview]=useState(true);
+    const [review,setreview]=useState(true);
+    const [pay,setpay]=useState(false);
 
     const data=[
         {
@@ -75,10 +77,8 @@ const Checkout = () => {
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+     
+
     </AccordionPanel>
   </AccordionItem>
 
@@ -102,7 +102,7 @@ const Checkout = () => {
        
         </Alert>
 
-         {/* Section 2 title */}
+        
         </Box>
         
       </AccordionButton>
@@ -115,7 +115,7 @@ const Checkout = () => {
   </AccordionItem>
 
 
-  <AccordionItem border="none">
+  <AccordionItem border="none" borderBottom="1px solid grey">
     <h2>
       <AccordionButton>
         <Box as="span" flex='1' onClick={()=>setreview(!review)} color={review==true?"white":'gray.600'} backgroundColor={review==true?"black":"white"} borderRadius="10px" p={4} textAlign='left'>
@@ -132,13 +132,30 @@ const Checkout = () => {
   </AccordionItem>
 
 
+  <AccordionItem border="none" >
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' onClick={()=>setpay(!pay)} color={pay==true?"white":'gray.600'} backgroundColor={pay==true?"black":"white"} borderRadius="10px" p={4} textAlign='left'>
+         4.Make Payment
+        </Box>
+        
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4} color="gray.400">
+
+     <Pay/>
+     
+    </AccordionPanel>
+  </AccordionItem>
+
+
 </Accordion>
     </Box>
 
-    <Box color="grey" p={5} backgroundColor="gray.50" width={{lg:"25%",sm:"100%",md:"60%"}} border="1px solid black">
+    <Box color="grey" p={5} backgroundColor="gray.50" width={{lg:"25%",sm:"100%",md:"60%"}} >
        <Text>SUMMARY (2 items)</Text>
        
-       <Box textAlign="left" height="400px" overflow="scroll" p={5} border="1px solid red" mt={2}>
+       <Box textAlign="left" height="400px" overflow="scroll" p={5}  mt={2}>
         {data.map((el)=>
         <div key={el.id}>
            <Text color="gray.600">{el.title}</Text>
