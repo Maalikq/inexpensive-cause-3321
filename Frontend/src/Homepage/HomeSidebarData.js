@@ -2,30 +2,30 @@ export const allOffersData = [
     {
       title: "FOOTWEAR",
       list: [
-        "Sports Shoes",
-        "Slippers & Flip Flops",
-        "Snadals & Floaters",
-        "Formal Shoes",
-        "Loafers",
-        "Sneakers",
-        "Ethnic Footwear",
-        "Shoe Accessories"
+        {title: "Sports Shoes", link: "/products/shoes"},
+        {title: "Slippers & Flip Flops", link: ""},
+        {title: "Snadals & Floaters", link: ""},
+        {title: "Formal Shoes", link: ""},
+        {title: "Loafers", link: ""},
+        {title: "Sneakers", link: ""},
+        {title: "Ethnic Footwear", link: ""},
+        {title: "Shoe Accessories", link: ""},
       ],
        
     },
     {
       title: "FESTIVE DECOR LIGHTING",
-      list: ["Decorative Lighting", "Diyas"],
+      list: [{title:"Decorative Lighting",link:""}, {title:"Diyas",link:""}],
     },
     {
       title: "SEASONAL CARE",
       list: [
-        "Skin Moisturizers",
-        "Face Wash & Cleaners",
-        "Body Lotions",
-        "Shampoos",
-        "Lip Balms",
-        "Deodorants",
+        {title: "Skin Moisturizers",link:""},
+        {title: "Face Wash & Cleaners",link:""},
+        {title: "Body Lotions",link:""},
+        {title: "Shampoos",link:""},
+        {title: "Lip Balms",link:""},
+        {title: "Deodorants",link:""},
       ],
     },
   ];
