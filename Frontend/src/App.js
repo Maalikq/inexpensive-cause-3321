@@ -10,6 +10,10 @@ import { ContentFooter } from "./Homepage/ContentFooter";
 import {Payment} from "./Homepage/Payment";
 import { FooterLinks } from "./Homepage/FooterLinks";
 import {About} from "./Homepage/About";
+import MensProducts from './AllProductPage/mens/product/shoes';
+import Tshirt from './AllProductPage/mens/product/tShirt';
+import Sarees from './AllProductPage/womens/Sarees';
+import Skin from './AllProductPage/beauty/Skin';
 function App() {
 
   
@@ -31,7 +35,7 @@ function App() {
 
   return (
     <>
-    <TopNav/>
+    {/* <TopNav/>
       <NavBar showHamburger={showHamburger} />
    
 
@@ -42,7 +46,11 @@ function App() {
      <Payment />
      <FooterLinks />
      <About />
-     <Footer/>
+     <Footer/> */}
+     {/* <MensProducts/> */}
+     {/* <Tshirt/> */}
+     {/* <Sarees/> */}
+     <Skin/>
     </>
   );
 }
