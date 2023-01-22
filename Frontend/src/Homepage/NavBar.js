@@ -10,6 +10,8 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { Backdrop } from "./Backdrop";
 import { HomeSidebar } from "./HomeSidebar";
 import { SideSignin } from "./SideSignin";
+import { NavLink } from "react-router-dom";
+
 import { useDisclosure } from "@chakra-ui/react";
 import Cart from "../components/Cart";
 import axios from "axios";
@@ -44,10 +46,12 @@ export const NavBar = ({ showHamburger }) => {
     <div className="top-bar">
       <div className="top-bar__container">
         <div className="top-bar__logo">
+
          <Link to={"/"}><img
             src={Grabdeal}
             alt="snapdeal-logo"
           /></Link> 
+
         </div>
         <div
           className="top-bar-hamburger"
@@ -104,13 +108,19 @@ export const NavBar = ({ showHamburger }) => {
           </div>
           <div className="top-bar__cart-sign">
             <div className="top-bar__cart">
+
+
+              <div style={{ display: "flex" }}>
               <div onClick={handleOpen} style={{ display: "flex" }}>
+
                 <p>Cart</p>
+              <NavLink to="/user/cart"> 
                 <img
                   src={shoppingCartIcon}
                   alt="shopping cart"
                   style={{ height: "20px", margin: "3px 0px 0px 6px" }}
                 />
+              </NavLink>
               </div>
 
               <Cart isOpen={isOpen} onClose={onClose}/>

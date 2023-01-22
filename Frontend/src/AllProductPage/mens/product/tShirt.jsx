@@ -6,8 +6,10 @@ import ScrollToTop from "react-scroll-to-top";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 //import { getProductData } from "../redux/action";
 import TshirtCard from "./tShirt.Card";
+
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+
 
 const Tshirt = () => {
   const [products, setProducts] = useState([]);
@@ -22,18 +24,18 @@ const Tshirt = () => {
       .get("https://snapdealbackend.onrender.com/products/tshirt")
       .then((res) => setProducts(res.data));
   }, []);
-  //  const handleSelect = (event) => {
-  //    setSortOption(event.target.value);
-  //    let sortedData = [...products];
+   const handleSelect = (event) => {
+     setSortOption(event.target.value);
+     let sortedData = [...products];
 
-  //    if (sortOption === "price-asc") {
-  //      sortedData = products.sort((a, b) => a.offPrice - b.offPrice);
-  //    } else if (sortOption === "price-desc") {
-  //      sortedData = products.sort((a, b) => b.offPrice - a.offPrice);
-  //    } else if (sortOption === "rating-asc") {
-  //      sortedData = products.sort((a, b) => a.rating - b.rating);
-  //    }
-  //  };
+     if (sortOption === "price-asc") {
+       sortedData = products.sort((a, b) => a.offPrice - b.offPrice);
+     } else if (sortOption === "price-desc") {
+       sortedData = products.sort((a, b) => b.offPrice - a.offPrice);
+     } else if (sortOption === "rating-asc") {
+       sortedData = products.sort((a, b) => a.rating - b.rating);
+     }
+   };
  
 
   return (
@@ -50,7 +52,7 @@ const Tshirt = () => {
           <li>Kitchen products</li>
         </ul>
       </div>
-      {/* <div className={styles.sortdiv}>
+      <div className={styles.sortdiv}>
         <select onChange={handleSelect}>
           <option value="">Sort by:</option>
           <option value="price-desc">Price Low to High</option>
@@ -59,11 +61,13 @@ const Tshirt = () => {
           <option value="rating-asc">Rating</option>
         </select>
        
-      </div> */}
+      </div>
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
+
            <Link to={`/products/${item._id}`}><TshirtCard {...item} /></Link> 
+
           </div>
         ))}
       </div>

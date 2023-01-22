@@ -1,4 +1,5 @@
 export const allOffersData = [
+
   {
     title: "FOOTWEAR",
     list: [
@@ -52,3 +53,4 @@ export const mobilesData = [
     list: ["Ambrane", "Intex", "Syska", "Polymer Power Banks"],
     },
   ];
+

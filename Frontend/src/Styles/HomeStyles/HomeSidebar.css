@@ -1,3 +1,4 @@
+
 .sidebar-container {
     background: #fff;
     border-radius: 3px;
@@ -5,10 +6,12 @@
     margin-bottom: 20px;
     position: relative;
   }
-  .sidebar__top{
+  /* .sidebar__top{
     text-align: left;
+  } */
+  ul{
+     padding-left: 0 !important;
   }
-  
   .sidebar ul {
     list-style: none;
     margin-bottom: 20px;
@@ -24,7 +27,7 @@
   
   .sidebar-li {
     font-size: 12px;
-    color: #666;
+    color: #666 !important;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -36,6 +39,7 @@
   .sidebar a {
     font-size: 12px;
     text-decoration: none;
+    color: #666 !important;
     display: block;
     margin-left: 17px;
     cursor: pointer;
