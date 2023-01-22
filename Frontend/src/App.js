@@ -42,7 +42,7 @@ function App() {
      <Payment />
      <FooterLinks />
      <About />
-     <Footer/>
+     <Footer/>  
     </>
   );
 }
