@@ -4,12 +4,12 @@
 <img src="https://user-images.githubusercontent.com/96861847/213928241-cd1725bf-128d-4150-b4f4-faf51803a17a.png"
 " alt="grabDeal"/>
  
-<h3 align="center">It's a ReactJS E-commerce web application with all the major functionalities</h3>
+<h3 align="center">It's a React-JS E-commerce web application with all the major functionalities</h3>
 Snapdeal is an Indian online e-commerce website. People can search and find products of their choice and order them. The variety of products include clothing, accessories, kitchen-ware, jewellery etc.
 
-In this project we have tried to make a look alike clone of Snapdeal. It was a team effort of 5 members completed within a week.
+In this project we have tried to make a look alike clone of Snapdeal. It was a team effort of 5 members completed within a week.& We given Unique Name and logo.
 
-We used Express for backend and ReactJs for frontend along with few other libraries to add functionality such as signup & login, and much more.
+We used Express for backend and ReactJs for frontend along with few other libraries to add functionality such as signup & login,Admin and much more.
 
 <br />
 
