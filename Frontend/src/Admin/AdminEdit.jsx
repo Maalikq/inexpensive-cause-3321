@@ -2,10 +2,10 @@ import { Box, Button, Center, Flex, FormLabel, Heading, Image, Input, TagLabel, 
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 
 const AdminEdit = () => {
-
+ 
     const [current,setCurrent]=useState({})
     const {id}=useParams()
     const toast = useToast()
@@ -13,17 +13,30 @@ const AdminEdit = () => {
     const handleLogout=()=>
     {
         localStorage.removeItem("token")
-        nav("/login")
+        nav("/")
     }
  
     useEffect(()=>
     {
-      axios.get(`http://localhost:3000/products/edit/${id}`,{headers:{token:localStorage.getItem("token")}}).then(r=>setCurrent(r.data))
+      axios.get(`https://snapdealbackend.onrender.com/products/edit/${id}`,{headers:{token:localStorage.getItem("token")}}).then(r=>{
+      if(typeof r.data=="string")
+      {
+        toast({
+          title: 'Not Authorize',
+          description: r.data,
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        })
+        return nav("/")
+      }  
+      setCurrent(r.data)})
+      
     },[id])
    
     const handleUpdate=()=>
     {
-        axios.patch(`http://localhost:3000/products/edit/${id}`,current,{headers:{token:localStorage.getItem("token")}}).then(r=>
+        axios.patch(`https://snapdealbackend.onrender.com/products/edit/${id}`,current,{headers:{token:localStorage.getItem("token")}}).then(r=>
         {
             if(r.data.msg)
             {

@@ -19,20 +19,20 @@ const AdminHome = () => {
     {
       setPage(1)
       setSearchParams({search:search,page:page})
-       axios.get(`http://localhost:3000/products/?search=${search}&page=${page}`,{headers:{token:localStorage.getItem("token")}})
-       .then(r=>setData(r.data)).then(r=>console.log(r.data.length+1))
+       axios.get(`https://snapdealbackend.onrender.com/products/?search=${search}&page=${page}`,{headers:{token:localStorage.getItem("token")}})
+       .then(r=>setData(r.data))
     }
 
     useEffect(()=>
     {
 
       setSearchParams({search:search,page:page})
-      axios.get(`http://localhost:3000/products/?search=${search}&page=${page}`,{headers:{token:localStorage.getItem("token")}}).then(r=>setData(r.data));
+      axios.get(`https://snapdealbackend.onrender.com/products/?search=${search}&page=${page}`,{headers:{token:localStorage.getItem("token")}}).then(r=>setData(r.data));
     },[random,page]);
    
     const handleDelete=(item)=>
     {
-      axios.delete(`http://localhost:3000/products/deleteProduct/${item._id}`,{headers:{token:localStorage.getItem("token")}}).then(r=>
+      axios.delete(`https://snapdealbackend.onrender.com/products/deleteProduct/${item._id}`,{headers:{token:localStorage.getItem("token")}}).then(r=>
       {
         if(r.data.msg)
         {
@@ -62,7 +62,7 @@ const AdminHome = () => {
     const handleLogout=()=>
     {
         localStorage.removeItem("token")
-        nav("/login")
+        nav("/")
     }
     console.log(totalPage)
   return (

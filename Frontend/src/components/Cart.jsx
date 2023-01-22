@@ -8,7 +8,7 @@ import { RiCloseFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
-import {Box, useDisclosure} from "@chakra-ui/react";
+import {Box, Heading, useDisclosure} from "@chakra-ui/react";
 import {  Modal,
   ModalOverlay,
   ModalContent,
@@ -56,42 +56,36 @@ const Notification = styled.div`
 
 
 
-const Cart = () => {
+const Cart = ({isOpen,onOpen,onClose}) => {
 
-  // let { cartProduct } = React.useContext(CartProvider);
+  
   const [popup, setPopup] = useState(true);
   const [open, setOpen] = React.useState(false);
   const [cart, setCart] = React.useState([]);
   const [totalRs, setTotalRs] = React.useState(0);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  // const { isOpen, onOpen, onClose } = useDisclosure()
 
   const [qty, setqty] = useState(1);
   
   const navigate = useNavigate();
-  // let { user, setUser } = useContext(UserProvider);
-  // const [opensnackbar, setOpensnackbar] = React.useState(false);
-  // const { product, isLooding } = useSelector(
-  //   (state) => state.app,
-  //   shallowEqual
-  // );
-  // const dispatch = useDispatch();
-  const handleOpen = () => {setOpen(true);
-    onOpen();
-  };
+  
+  // const handleOpen = () => {setOpen(true);
+  //   onOpen();
+  // };
   const handleClose = () => {setOpen(false)
   };
   
 
 
-  let cartProduct={
-    title:"hrx item name",
-    images:[
-          "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"
-    ],
-    discounted_price:"584",
+  // let cartProduct={
+  //   title:"hrx item name",
+  //   images:[
+  //         "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"
+  //   ],
+  //   discounted_price:"584",
 
 
-  }
+  // }
 
   
   const token=localStorage.getItem("token");
@@ -138,7 +132,7 @@ const Cart = () => {
    
   }
   
-  
+
 
   const checkout=()=>{
     onClose();
@@ -152,57 +146,7 @@ const Cart = () => {
 
 <div className={styles.main}>
       
-        <div className={styles.cont}>
-          <Notification show={popup} className={styles.notif}>
-            <div>
-              <TiTick />
-            </div>
-            <div>
-              <h4 className={styles.h4}>
-                {" "}
-                {cartProduct.title} added to your cart.
-              </h4>
-            </div>
-            <div onClick={() => setPopup(false)}>
-              <RiCloseFill />
-            </div>
-          </Notification>
-
-          <div className={styles.cart}>
-          
-            <div>
-              <img src={cartProduct.images[0]} alt="cart" width="70%" />
-            </div>
-            <div >
-              <p className={styles.heading}>{cartProduct.title}</p>
-              <p>Rs. {cartProduct.discounted_price}</p>
-            </div>
-           
-            
-
-            <div>
-              <p className={styles.heading}>
-                Your Order{" "}
-                <span className={styles.items}>{cart.length} Items</span>
-              </p>
-              <h2 className={styles.value}>
-                You Pay : <span style={{ color: "black" }}>Rs. {totalRs}</span>
-              </h2>
-              <p className={styles.view}>
-                (Including delivery and other charges. View Cart for details)
-              </p>
-            </div>
-
-            <div>
-              <div
-                
-              >
-                PROCEED TO CHECKOUT
-              </div>
-              <div onClick={handleOpen}>VIEW CART</div>
-            </div>
-          </div>
-        </div>
+       
 
         <Modal
            isOpen={isOpen}
@@ -218,7 +162,7 @@ const Cart = () => {
                 <h4>
                   Shooping Cart{" "}
                   <span style={{ fontSize: "1rem", color: "rgb(132,132,132)" }}>
-                     {cart.length} Item
+                     {cart?.length} Item
                   </span>
                 </h4>
               </div>
@@ -258,10 +202,12 @@ const Cart = () => {
                 <div>Subtotal</div>
               </div>
 
-                {cart.map((item, ind) => (
+                { cart?.length==0?<Heading>Your Cart is Empty</Heading>:
+                cart?.map((item, ind) => (
                 <CartView
                   product={item}
                   qtychange={qtychange}
+                  
                   key={ind}
                   
 
@@ -280,7 +226,7 @@ const Cart = () => {
               <div>
                 <div style={{ display: "flex" }}>
                   <div>Sub Total: </div>
-                  <div style={{ marginLeft: "auto" }}>Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</div>
+                  <div style={{ marginLeft: "auto" }}>Rs. {cart?.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</div>
                 </div>
                 <div style={{ display: "flex" }}>
                   <div>Delivery Charges: </div>
@@ -295,7 +241,7 @@ const Cart = () => {
               onClick={checkout}
                style={{ fontSize:"15px",fontWeight:"bold" }}
               >
-                PROCEED TO PAY Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}
+                PROCEED TO PAY Rs. {cart?.reduce((c,el)=>c+(el.product.price*el.quntity),0)}
               </div>
             </div>
           </div>

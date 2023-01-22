@@ -1,5 +1,5 @@
 import React from "react";
-import mb from '../Assets/Home/mobile.png'
+import mb from '../assets/Home/mobile.png'
 import "../Styles/HomeStyles/TopNav.css";
 
 export const TopNav = () => {

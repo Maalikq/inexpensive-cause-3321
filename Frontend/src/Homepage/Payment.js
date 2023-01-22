@@ -1,14 +1,14 @@
 import React from "react";
 import '../Styles/HomeStyles/Payment.css'
 
-import PaymentImg from "../Assets/Home/paymentsec.png";
-import facebook from "../Assets/Home/facebook.png";
-import twitter from "../Assets/Home/twitter.png";
-import instagram from "../Assets/Home/instagram.png";
-import linkedin from "../Assets/Home/linkedin.png";
-import youtube from "../Assets/Home/youtube.png";
-import telegram from "../Assets/Home/telegram.png";
-import whatsapp from "../Assets/Home/whatsapp.png";
+import PaymentImg from "../assets/Home/paymentsec.png";
+import facebook from "../assets/Home/facebook.png";
+import twitter from "../assets/Home/twitter.png";
+import instagram from "../assets/Home/instagram.png";
+import linkedin from "../assets/Home/linkedin.png";
+import youtube from "../assets/Home/youtube.png";
+import telegram from "../assets/Home/telegram.png";
+import whatsapp from "../assets/Home/whatsapp.png";
 
 
 

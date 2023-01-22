@@ -21,6 +21,7 @@ const SinglePage=()=>{
       //  const { isOpen, onOpen, onClose } = useDisclosure();
      
         const addProduct = (data) => {
+<<<<<
           axios
             .post("https://snapdealbackend.onrender.com/carts/addToCart", {product:{product:id,quntity:1}},
             {headers:{token:localStorage.getItem("token")}
@@ -40,19 +41,42 @@ const SinglePage=()=>{
             {
                 toast({
                     title: 'Cart',
+
+          
+          axios.post("https://snapdealbackend.onrender.com/carts/addToCart",{product:{product:id,quntity:1}},{headers:{token:localStorage.getItem("token")}})
+            .then((r) => {
+               if(r.data.msg)
+               {
+                toast({
+                  title: 'Product',
+                  description: r.data.msg,
+                  status: 'success',
+                  duration: 9000,
+                  isClosable: true,
+                })
+               }
+               else
+               {
+                toast({
+                    title: 'Product',
+
                     description: r.data,
                     status: 'error',
                     duration: 9000,
                     isClosable: true,
                   })
+
             }
         })
+               }
+            })
+
             .catch((e) =>
             {
                toast({
                  title: "Something went wrong",
-                 description: "Login First.",
-                 status: "success",
+                 description: e,
+                 status: "error",
                  duration: 9000,
                  isClosable: true,
                });
@@ -71,10 +95,10 @@ const SinglePage=()=>{
           
           w="90%"
           gap={3}
-          m="auto"
+          justifyContent="center"
           bg="white"
           p="20px"
-          
+          m="auto"
         >
           <Box w="40%" id="imageMagnifyer" zIndex={1}>
             <ReactImageMagnify

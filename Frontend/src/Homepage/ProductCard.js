@@ -1,7 +1,7 @@
 import React from "react";
 
-import ratingIcon from "../Assets/cards/star.png";
-import heartIcon from "../Assets/cards/heart.png";
+import ratingIcon from "../assets/cards/star.png";
+import heartIcon from "../assets/cards/heart.png";
 import '../Styles/HomeStyles/ProductCard.css'
 
 

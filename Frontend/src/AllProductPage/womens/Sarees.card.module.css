@@ -8,14 +8,14 @@
 }
 .mensPname {
   margin-left: 5px;
-  margin-right: 40px;
+  margin-right: 30px;
  
    color: #666666;
   font-size: 13px;
   line-height: 18px;
 }
 .mensPprice {
-  margin-left: -95px;
+  
    font-size: 13px;
   text-decoration: line-through;
   color: #cccccc;
@@ -34,9 +34,11 @@
   border: 1px solid #666666;
 }
 .priceall {
+  margin-left: 5px;
   margin-top: 10px;
 }
 .ratingflex{
+  margin-left: 1% !important;
   width: 20%;
   margin-bottom: 10px;
   margin-left: 5%;

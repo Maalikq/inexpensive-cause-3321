@@ -1,16 +1,16 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import chappal from '../Assets/Products/chappal.jpg'
-import mala from '../Assets/Products/mala.jpg'
-import chopper from '../Assets/Products/chopper.jpg'
-import socks from '../Assets/Products/socks.jpg'
-import trim from '../Assets/Products/trim.jpg'
-import wallet from '../Assets/Products/wallet.jpg'
-import tshirt from '../Assets/Products/tshirt.jpg'
-import lighter from '../Assets/Products/lighter.jpg'
-import leftarrow from '../Assets/Banner/leftIcon.png'
-import rightarrow from '../Assets/Banner/rightIcon.png'
+import chappal from '../assets/Products/chappal.jpg'
+import mala from '../assets/Products/mala.jpg'
+import chopper from '../assets/Products/chopper.jpg'
+import socks from '../assets/Products/socks.jpg'
+import trim from '../assets/Products/trim.jpg'
+import wallet from '../assets/Products/wallet.jpg'
+import tshirt from '../assets/Products/tshirt.jpg'
+import lighter from '../assets/Products/lighter.jpg'
+import leftarrow from '../assets/Banner/leftIcon.png'
+import rightarrow from '../assets/Banner/rightIcon.png'
 import { ProductCard } from './ProductCard';
 import '../Styles/HomeStyles/ProductCaro.css'
 

@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import '../Styles/HomeStyles/NavBar.css'
 
-import Grabdeal from '../Assets/GRABDEAL.png'
-import searchIcon from "../Assets/Home/searchIcon.png";
-import shoppingCartIcon from "../Assets/Home/cart.png";
-import userIcon from "../Assets/Home/user.png";
-import trendingIcon from "../Assets/Home/trending.svg";
+import Grabdeal from '../assets/GRABDEAL.png'
+import searchIcon from "../assets/Home/searchIcon.png";
+import shoppingCartIcon from "../assets/Home/cart.png";
+import userIcon from "../assets/Home/user.png";
+import trendingIcon from "../assets/Home/trending.svg";
 import {GiHamburgerMenu} from 'react-icons/gi'
 import { Backdrop } from "./Backdrop";
 import { HomeSidebar } from "./HomeSidebar";
 import { SideSignin } from "./SideSignin";
 import { NavLink } from "react-router-dom";
 
+import { useDisclosure } from "@chakra-ui/react";
+import Cart from "../components/Cart";
+
 export const NavBar = ({ showHamburger }) => {
   const [show, setShow] = useState(false);
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleOpen = () => {
+    onOpen();
+  };
 
   const togglesearch = () => {
     setShow(!show);
@@ -87,7 +96,10 @@ export const NavBar = ({ showHamburger }) => {
           <div className="top-bar__cart-sign">
             <div className="top-bar__cart">
 
+
               <div style={{ display: "flex" }}>
+              <div onClick={handleOpen} style={{ display: "flex" }}>
+
                 <p>Cart</p>
               <NavLink to="/user/cart"> 
                 <img
@@ -97,6 +109,8 @@ export const NavBar = ({ showHamburger }) => {
                 />
               </NavLink>
               </div>
+
+              <Cart isOpen={isOpen} onClose={onClose}/>
             </div>
             <div className="top-bar__sign-in-wrapper">
               <div  className="top-bar__sign-in">
