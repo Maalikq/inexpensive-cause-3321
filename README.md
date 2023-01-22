@@ -186,7 +186,7 @@ If you want to contact me, you can reach me through below handles. <br />
 
 
 
-© 2022 Afzal Qureshi
+© 2023 Afzal Qureshi
 
 
 
