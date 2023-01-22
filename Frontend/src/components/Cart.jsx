@@ -74,7 +74,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
   // };
   const handleClose = () => {setOpen(false)
   };
-  
+  const toast = useToast()
 
 
   // let cartProduct={
@@ -83,9 +83,38 @@ const Cart = ({isOpen,onOpen,onClose}) => {
   //         "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"
   //   ],
   //   discounted_price:"584",
-
+   const [random,setRandom]=useState(0)
 
   // }
+  const handelremove=(id)=>{
+       
+     
+    axios.patch(`https://snapdealbackend.onrender.com/carts/delete`,{productId:id},{headers:{token:localStorage.getItem("token")}})
+    .then(r=>{
+        if(r.data.msg)
+        {
+            toast({
+                title: 'Product',
+                description: r.data.msg,
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+              })
+              setRandom(random+1)
+
+        }
+        else
+        {
+            toast({
+                title: 'Product',
+                description: r.data,
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
+        }
+    })
+}
 
   
   const token=localStorage.getItem("token");
@@ -95,7 +124,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
            
    
 
-   },[qty])
+   },[qty,random])
   
   const cartHandler = () => {
 
@@ -207,7 +236,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
                 <CartView
                   product={item}
                   qtychange={qtychange}
-                  
+                  handelremove={handelremove}
                   key={ind}
                   
 

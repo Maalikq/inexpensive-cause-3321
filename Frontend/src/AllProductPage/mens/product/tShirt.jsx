@@ -7,6 +7,7 @@ import { BsArrowUpCircleFill } from "react-icons/bs";
 //import { getProductData } from "../redux/action";
 import TshirtCard from "./tShirt.Card";
 import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Tshirt = () => {
   const [products, setProducts] = useState([]);
@@ -62,7 +63,7 @@ const Tshirt = () => {
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
-            <TshirtCard {...item} />
+           <Link to={`/products/${item._id}`}><TshirtCard {...item} /></Link> 
           </div>
         ))}
       </div>

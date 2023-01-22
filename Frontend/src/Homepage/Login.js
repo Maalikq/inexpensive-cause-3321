@@ -40,8 +40,9 @@ export const Login = ({onClose,setrandom}) => {
                   localStorage.setItem("token",r.data.token)
                 //   nav("/posts")
                 setrandom(1)
+           
                 onClose()
-                
+                window.location.href="/"
             }
             else
             {

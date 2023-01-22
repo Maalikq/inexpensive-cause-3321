@@ -25,7 +25,7 @@ export const LoginButton = ({setrandom}) => {
                 <ModalHeader>Login</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                <Login onClose={onClose} setrandom={setrandom}/>
+                <Login onClose={onClose} setrandom={setrandom} />
                 </ModalBody>
             </ModalContent>
         </Modal>

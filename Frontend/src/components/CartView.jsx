@@ -6,38 +6,10 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '@chakra-ui/react';
 
-export default function CartView({product,qtychange}){
+export default function CartView({product,qtychange,handelremove}){
 
-    const toast = useToast()
-    const handelremove=(id)=>{
-        console.log(localStorage.getItem("token"))
-        console.log(product)
-     
-        axios.patch(`https://snapdealbackend.onrender.com/carts/delete`,{productId:id},{headers:{token:localStorage.getItem("token")}})
-        .then(r=>{
-            if(r.data.msg)
-            {
-                toast({
-                    title: 'Product',
-                    description: r.data.msg,
-                    status: 'success',
-                    duration: 9000,
-                    isClosable: true,
-                  })
-
-            }
-            else
-            {
-                toast({
-                    title: 'Product',
-                    description: r.data,
-                    status: 'error',
-                    duration: 9000,
-                    isClosable: true,
-                  })
-            }
-        })
-    }
+    
+   
    
        
   return (

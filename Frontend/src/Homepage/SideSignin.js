@@ -3,13 +3,15 @@ import '../Styles/HomeStyles/SideSignin.css'
 import { RegisterButton } from "./RegisterButton";
 import { LoginButton } from "./LoginButton";
 import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-export const SideSignin = () => {
+export const SideSignin = ({setNum}) => {
    const token = localStorage.getItem('token');
    const [random,setrandom] = useState(0)
    const handleLogout =()=>{
     localStorage.removeItem('token');
     setrandom(random+1)
+    window.location.href="/"
 
    }
    useEffect(()=>{
@@ -26,7 +28,7 @@ export const SideSignin = () => {
         <i className="fa-solid fa-box"></i>
           
           <p>
-          Your Orders
+         <Link to="/user/orderhistory"> Your Orders</Link>
           </p>
         </li>
         <li>
@@ -37,9 +39,9 @@ export const SideSignin = () => {
           </p>
         </li>
       </ul>
-      {token ? <Button onClick={handleLogout}>Logout</Button> :<><p>If you are a new user</p>
+      {token ? <Button onClick={handleLogout} >Logout</Button> :<><p>If you are a new user</p>
       <RegisterButton/>
-      <LoginButton setrandom={setrandom} /></>}
+      <LoginButton setrandom={setrandom}  /></>}
       
     </div>
   );

@@ -23,6 +23,7 @@ const topCategoriesData = [
     imgSrc: mobileIcon,
     listData: allOffersData,
     img: mens,
+    path:"/products/tshirt"
     
   },
   {
@@ -30,6 +31,7 @@ const topCategoriesData = [
     imgSrc: livingIcon,
     listData: mobilesData,
     img: women,
+    path:"/products/sarees"
   },
   {
     name: "Home & Kitchen",
@@ -48,6 +50,7 @@ const topCategoriesData = [
     imgSrc: beautyIcon,
     listData: allOffersData,
     img: sidebeauty,
+    path:"/products/skinCare"
   },
 ];
 
@@ -103,7 +106,7 @@ export const HomeSidebar = (props) => {
                     style={{ height: "28px" }}
                   />
                   <p>
-                    <NavLink>
+                    <NavLink to={item.path} >
 
                   {item.name}
                     </NavLink>

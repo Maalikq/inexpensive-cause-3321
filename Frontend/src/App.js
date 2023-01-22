@@ -29,13 +29,15 @@ function App() {
   
   }, []);
 
+
+
   return (
     <>
     <TopNav/>
       <NavBar showHamburger={showHamburger} />
    
 
-     <MainRoute/>
+     <MainRoute />
      
      <UpperContFooter />
      <ContentFooter />
