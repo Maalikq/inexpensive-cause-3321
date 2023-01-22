@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 const Pay = () => {
 
   const [cart, setCart] = React.useState([]);
-
-  const token=localStorage.getItem("token");
   const toast = useToast()
+  const token=localStorage.getItem("token");
+
 
   React.useEffect(()=>{
     cartHandler();
@@ -37,33 +37,22 @@ const Pay = () => {
       axios.post(`https://snapdealbackend.onrender.com/orders/done`,{product:cart},{headers:{token:localStorage.getItem("token")}}).then(r=>
       {
         if(r.data.msg)
-            {
-                toast({
-                    title: 'Order',
-                    description: r.data.msg,
-                    status: 'success',
-                    duration: 9000,
-                    isClosable: true,
-                  })
+        {
+          toast({
+            title: 'Order',
+            description: r.data.msg,
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
 
-                  cart.map((ele)=>
-                  {
-                    axios.patch(`https://snapdealbackend.onrender.com/carts/delete`,{productId:ele._id},{headers:{token:localStorage.getItem("token")}})
-                  })
+          cart.map((ele)=>
+          {
+            axios.patch("https://snapdealbackend.onrender.com/carts/delete",{productId:ele._id},{headers:{token:localStorage.getItem("token")}})
+          })
 
-                  nav("/")
-
-            }
-            else
-            {
-                toast({
-                    title: 'Order',
-                    description: r.data,
-                    status: 'error',
-                    duration: 9000,
-                    isClosable: true,
-                  })
-            }
+          window.location.href="/"
+        }
       })
   }
 

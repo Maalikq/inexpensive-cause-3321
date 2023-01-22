@@ -33,24 +33,24 @@ function App() {
   
   }, []);
 
+
+
   return (
     <>
     {/* <TopNav/>
       <NavBar showHamburger={showHamburger} />
    
 
-     <MainRoute/>
+     <MainRoute />
      
      <UpperContFooter />
      <ContentFooter />
      <Payment />
      <FooterLinks />
      <About />
-     <Footer/> */}
-     {/* <MensProducts/> */}
-     {/* <Tshirt/> */}
-     {/* <Sarees/> */}
-     <Skin/>
+
+     <Footer/>  
+
     </>
   );
 }

@@ -20,8 +20,6 @@ export const SideSubList = ({ title, list }) => {
           );
         })}
       </ul>
-    </div>
-  );
+    </div>
+  );
 };
-
-

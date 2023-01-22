@@ -54,6 +54,8 @@ const SinglePage=()=>{
                   duration: 9000,
                   isClosable: true,
                 })
+                
+
                }
                else
                {

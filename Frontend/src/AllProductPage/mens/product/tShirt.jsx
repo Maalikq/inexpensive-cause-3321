@@ -6,8 +6,10 @@ import ScrollToTop from "react-scroll-to-top";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 //import { getProductData } from "../redux/action";
 import TshirtCard from "./tShirt.Card";
+
+import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-//import { Button } from "@chakra-ui/react";
+
 
 const Tshirt = () => {
   const [products, setProducts] = useState([]);
@@ -63,11 +65,9 @@ const Tshirt = () => {
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
-            <Link to={`/products/${item._id}`}>
-             
-              <TshirtCard {...item} />
-            </Link>
-            
+
+           <Link to={`/products/${item._id}`}><TshirtCard {...item} /></Link> 
+
           </div>
         ))}
       </div>

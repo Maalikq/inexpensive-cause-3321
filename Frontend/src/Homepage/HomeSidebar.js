@@ -23,7 +23,9 @@ const topCategoriesData = [
     imgSrc: mobileIcon,
     listData: allOffersData,
     img: mens,
-    link:"/products/tshirt",
+
+    path:"/products/tshirt"
+
     
   },
   {
@@ -31,7 +33,9 @@ const topCategoriesData = [
     imgSrc: livingIcon,
     listData: allOffersData,
     img: women,
-    link:"/products/skinCare"
+
+    path:"/products/sarees"
+
   },
   {
     name: "Women's Sarees",
@@ -51,6 +55,7 @@ const topCategoriesData = [
     imgSrc: beautyIcon,
     listData: allOffersData,
     img: sidebeauty,
+    path:"/products/skinCare"
   },
 ];
 
@@ -106,7 +111,9 @@ export const HomeSidebar = (props) => {
                     style={{ height: "28px" }}
                   />
                   <p>
-                    <NavLink to={item.link}>
+
+                    <NavLink to={item.path} >
+
 
                   {item.name}
                     </NavLink>

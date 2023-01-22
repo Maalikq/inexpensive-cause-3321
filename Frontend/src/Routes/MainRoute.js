@@ -9,6 +9,7 @@ import Tshirt from '../AllProductPage/mens/product/tShirt'
 import Sarees from '../AllProductPage/womens/Sarees'
 import Cart from '../components/Cart'
 import Checkout from '../components/Checkout'
+import OrderHistory from '../components/OrderHistory'
 import SinglePage from '../components/SinglePage'
 import { Home } from '../Homepage/Home'
 
@@ -26,6 +27,7 @@ const MainRoute = () => {
         <Route path='/products/edit/:id' element={<AdminEdit/>}/>
         <Route path='/products/addProduct' element={<AdminAddProduct/>}/>
         <Route path='products/:id' element={<SinglePage/>} />
+        <Route path='/user/orderhistory' element={<OrderHistory/>}/>
      </Routes>
   )
 }

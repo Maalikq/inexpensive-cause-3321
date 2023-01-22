@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertIcon, Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Alert, AlertIcon, Box, Divider, Flex, Heading, Text, useToast } from '@chakra-ui/react'
 import axios from 'axios';
 import React, { useState } from 'react'
 import Address from './Address';
@@ -15,13 +15,14 @@ const Checkout = () => {
 
     const [cart, setCart] = React.useState([]);
    
-
-
+   const [user,setUser]=useState({})
+   const toast = useToast()
     const token=localStorage.getItem("token");
 
  React.useEffect(()=>{
   cartHandler();
          
+  axios.get("https://snapdealbackend.onrender.com/users",{headers:{token:localStorage.getItem("token")}}).then(r=>setUser(r.data))
  
 
  },[])
@@ -41,41 +42,6 @@ const cartHandler = () => {
 };
 
 
-    const data=[
-        {
-            id:1,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-          sizes:"xl",
-          qty:2,
-          discounted_price:"584",
-        },
-        {
-            id:2,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-          sizes:"xl",
-          qty:1,
-          discounted_price:"584",
-        },
-        {
-            id:3,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-          sizes:"xl",
-          qty:1,
-          discounted_price:"584",
-        },
-        {
-            id:4,
-          images:[ "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"],
-          title:"hrx item name Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
-          sizes:"xl",
-          qty:1,
-          discounted_price:"584",
-        }
-    
-      ]
 
       let showadr=JSON.parse(localStorage.getItem("address")) || {};
 
@@ -97,7 +63,7 @@ const cartHandler = () => {
             <Flex direction={{lg:"row",sm:"column"}}>
          { login==false && <AlertIcon color="green" boxSize={6}/>}
             <Text color={login?"white":"gray.600"}>1.Login</Text>
-            { login==false && <Text ml={{lg:"200px"}}>suryawanshi@gmail.com</Text>}
+            { login==false && <Text ml={{lg:"200px"}}>{user?.email}</Text>}
        </Flex>
        
         </Alert>

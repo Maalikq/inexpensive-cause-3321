@@ -8,6 +8,7 @@ import { Button } from "@chakra-ui/react";
 import ScrollToTop from "react-scroll-to-top";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 const Sarees = () => {
   const [products, setProducts] = useState([]);
   const [sortOption, setSortOption] = useState("");
@@ -74,11 +75,9 @@ const Sarees = () => {
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
-            <Link to={`/products/${item._id}`}>
-             
-              <SareesCard {...item} />
-            </Link>
-           
+
+            <Link to={`/products/${item._id}`}> <SareesCard {...item} /></Link>
+
           </div>
         ))}
       </div>
