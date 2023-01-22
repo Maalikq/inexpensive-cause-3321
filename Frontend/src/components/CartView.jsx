@@ -4,7 +4,7 @@ import {BsHeart} from 'react-icons/bs';
 import styles from './CartView.module.css';
 import { useState } from 'react';
 
-export default function CartView({product,handelRemove,qtychange}){
+export default function CartView({product,handelremove,qtychange}){
    
        
   return (
@@ -20,7 +20,7 @@ export default function CartView({product,handelRemove,qtychange}){
               </div>
 
               <div style={{display:"flex",}}>
-                  <div  className={styles.action}><RiCloseFill onClick={handelRemove} style={{marginRight:"0.5rem"}} size="1.3rem"/>REMOVE</div> | 
+                  <div  className={styles.action}><RiCloseFill onClick={handelremove} style={{marginRight:"0.5rem"}} size="1.3rem"/>REMOVE</div> | 
                   <div className={styles.action}><BsHeart style={{marginRight:"0.5rem"}}/>MOVE TO SHORTLIST</div>
               </div>
           </div>

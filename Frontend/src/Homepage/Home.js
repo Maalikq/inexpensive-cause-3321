@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../Styles/HomeStyles/Home.css'
-import upbtnicon from  '../Assets/Products/upbtnicon.png'
+import upbtnicon from  '../assets/Products/upbtnicon.png'
 
 
 import { HomeMid } from './HomeMid';

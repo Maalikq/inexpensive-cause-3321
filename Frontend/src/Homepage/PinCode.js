@@ -1,6 +1,6 @@
 import React from "react";
 
-import locationImg from "../Assets/cards/location.jpg";
+import locationImg from "../assets/cards/location.jpg";
 
 import '../Styles/HomeStyles/PinCode.css'
 

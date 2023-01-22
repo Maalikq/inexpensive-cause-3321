@@ -1,9 +1,9 @@
 import React from 'react'
 import '../Styles/HomeStyles/UpperContFooter.css'
-import paymentIcon from '../Assets/Home/paymentImg.png'
-import trustIcon from '../Assets/Home/trust.png'
-import helpIcon from '../Assets/Home/help.png'
-import shopMobileIcon from '../Assets/Home/shop.png'
+import paymentIcon from '../assets/Home/paymentImg.png'
+import trustIcon from '../assets/Home/trust.png'
+import helpIcon from '../assets/Home/help.png'
+import shopMobileIcon from '../assets/Home/shop.png'
 import { UpperFootCard } from './UpperFootCard'
 
 const FootData = [

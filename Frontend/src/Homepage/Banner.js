@@ -3,13 +3,13 @@ import '../Styles/HomeStyles/Banner.css'
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import bob from '../Assets/Banner/bob.jpg'
-import health from '../Assets/Banner/Health.jpg'
-import kurtaset from '../Assets/Banner/kurtaset.jpg'
-import leftarrow from '../Assets/Banner/leftIcon.png'
-import rightarrow from '../Assets/Banner/rightIcon.png'
-import westernwear from '../Assets/Banner/westernwear.jpg'
-import kitchen from '../Assets/Banner/kitchen.jpg'
+import bob from '../assets/Banner/bob.jpg'
+import health from '../assets/Banner/Health.jpg'
+import kurtaset from '../assets/Banner/kurtaset.jpg'
+import leftarrow from '../assets/Banner/leftIcon.png'
+import rightarrow from '../assets/Banner/rightIcon.png'
+import westernwear from '../assets/Banner/westernwear.jpg'
+import kitchen from '../assets/Banner/kitchen.jpg'
 
 
 

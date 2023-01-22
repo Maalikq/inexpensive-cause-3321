@@ -1,18 +1,18 @@
 import React from "react";
 
 import '../Styles/HomeStyles/HomeSidebar.css';
-import mobileIcon from "../Assets/sidebar/mobile.png";
-import livingIcon from "../Assets/sidebar/living.png";
-import homeIcon from "../Assets/sidebar/home.png";
-import fashionIcon from "../Assets/sidebar/fashion.png";
-import beautyIcon from "../Assets/sidebar/beauty.png";
-import qrImg from "../Assets/sidebar/qrcode.png";
+import mobileIcon from "../assets/sidebar/mobile.png";
+import livingIcon from "../assets/sidebar/living.png";
+import homeIcon from "../assets/sidebar/home.png";
+import fashionIcon from "../assets/sidebar/fashion.png";
+import beautyIcon from "../assets/sidebar/beauty.png";
+import qrImg from "../assets/sidebar/qrcode.png";
 import { allOffersData, mobilesData } from "./HomeSidebarData";
-import mens from '../Assets/sidebar/mens.jpg'
-import women from "../Assets/sidebar/women.jpg";
-import sidehome from "../Assets/sidebar/sidehome.jpg";
-import toy from "../Assets/sidebar/toy.jpg";
-import sidebeauty from "../Assets/sidebar/sidebeauty.jpg";
+import mens from '../assets/sidebar/mens.jpg'
+import women from "../assets/sidebar/women.jpg";
+import sidehome from "../assets/sidebar/sidehome.jpg";
+import toy from "../assets/sidebar/toy.jpg";
+import sidebeauty from "../assets/sidebar/sidebeauty.jpg";
 import { SideProductList } from "./SideProductList";
 import {NavLink} from 'react-router-dom'
 

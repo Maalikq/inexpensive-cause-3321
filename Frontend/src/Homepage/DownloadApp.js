@@ -1,8 +1,8 @@
 import React from "react";
 import '../Styles/HomeStyles/Download.css'
-import downloadImg from "../Assets/Home/downloadImg.png";
-import appStoreImg from "../Assets/Home/appStore.png";
-import playStoreImg from "../Assets/Home/playstore.png";
+import downloadImg from "../assets/Home/downloadImg.png";
+import appStoreImg from "../assets/Home/appStore.png";
+import playStoreImg from "../assets/Home/playstore.png";
 
 
 export const DownloadApp = () => {
