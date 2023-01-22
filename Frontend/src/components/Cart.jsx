@@ -132,26 +132,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
    
   }
   
-  const handleremove=(id)=>{
 
-    axios.delete("https://snapdealbackend.onrender.com/carts/delete",
-     
-    { productId:id},
-   
-    {
-     
-    headers:{
-      "token":token
-    },}
-
-
-  ).then(()=>console.log("hogaya"))
-  .catch((err)=>console.log(err));
-    
-  
-
-  }
-  
 
   const checkout=()=>{
     onClose();
@@ -165,57 +146,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
 
 <div className={styles.main}>
       
-        {/* <div className={styles.cont}>
-          <Notification show={popup} className={styles.notif}>
-            <div>
-              <TiTick />
-            </div>
-            <div>
-              <h4 className={styles.h4}>
-                {" "}
-                {cartProduct.title} added to your cart.
-              </h4>
-            </div>
-            <div onClick={() => setPopup(false)}>
-              <RiCloseFill />
-            </div>
-          </Notification>
-
-          <div className={styles.cart}>
-          
-            <div>
-              <img src={cartProduct.images[0]} alt="cart" width="70%" />
-            </div>
-            <div >
-              <p className={styles.heading}>{cartProduct.title}</p>
-              <p>Rs. {cartProduct.discounted_price}</p>
-            </div>
-           
-            
-
-            <div>
-              <p className={styles.heading}>
-                Your Order{" "}
-                <span className={styles.items}>{cart.length} Items</span>
-              </p>
-              <h2 className={styles.value}>
-                You Pay : <span style={{ color: "black" }}>Rs. {totalRs}</span>
-              </h2>
-              <p className={styles.view}>
-                (Including delivery and other charges. View Cart for details)
-              </p>
-            </div>
-
-            <div>
-              <div
-                
-              >
-                PROCEED TO CHECKOUT
-              </div>
-              <div onClick={handleOpen}>VIEW CART</div>
-            </div>
-          </div>
-        </div> */}
+       
 
         <Modal
            isOpen={isOpen}
@@ -231,7 +162,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
                 <h4>
                   Shooping Cart{" "}
                   <span style={{ fontSize: "1rem", color: "rgb(132,132,132)" }}>
-                     {cart.length} Item
+                     {cart?.length} Item
                   </span>
                 </h4>
               </div>
@@ -271,12 +202,12 @@ const Cart = ({isOpen,onOpen,onClose}) => {
                 <div>Subtotal</div>
               </div>
 
-                { cart.length==0?<Heading>Your Cart is Empty</Heading>:
-                cart.map((item, ind) => (
+                { cart?.length==0?<Heading>Your Cart is Empty</Heading>:
+                cart?.map((item, ind) => (
                 <CartView
                   product={item}
                   qtychange={qtychange}
-                  handleremove={()=>handleremove(item.product._id)}
+                  
                   key={ind}
                   
 
@@ -295,7 +226,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
               <div>
                 <div style={{ display: "flex" }}>
                   <div>Sub Total: </div>
-                  <div style={{ marginLeft: "auto" }}>Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</div>
+                  <div style={{ marginLeft: "auto" }}>Rs. {cart?.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</div>
                 </div>
                 <div style={{ display: "flex" }}>
                   <div>Delivery Charges: </div>
@@ -310,7 +241,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
               onClick={checkout}
                style={{ fontSize:"15px",fontWeight:"bold" }}
               >
-                PROCEED TO PAY Rs. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}
+                PROCEED TO PAY Rs. {cart?.reduce((c,el)=>c+(el.product.price*el.quntity),0)}
               </div>
             </div>
           </div>

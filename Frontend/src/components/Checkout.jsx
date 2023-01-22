@@ -183,10 +183,10 @@ const cartHandler = () => {
     </Box>
 
     <Box color="grey" p={5} backgroundColor="gray.50" width={{lg:"25%",sm:"100%",md:"60%"}} >
-       <Text>SUMMARY {cart.length} Items</Text>
+       <Text>SUMMARY {cart?.length} Items</Text>
        
        <Box textAlign="left" height="400px" overflow="scroll" p={5}  mt={2}>
-        {cart.map((el)=>
+        {cart?.map((el)=>
         <div key={el.id}>
            <Text color="gray.600">{el.product.name}</Text>
 

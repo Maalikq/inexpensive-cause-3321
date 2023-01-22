@@ -1,13 +1,14 @@
-import { Box, Button, Divider, Flex, Input, Text } from '@chakra-ui/react'
+import { Box, Button, Divider, Flex, Input, Text, useToast } from '@chakra-ui/react'
 import axios from 'axios';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Pay = () => {
 
   const [cart, setCart] = React.useState([]);
 
   const token=localStorage.getItem("token");
-
+  const toast = useToast()
 
   React.useEffect(()=>{
     cartHandler();
@@ -29,6 +30,42 @@ const Pay = () => {
     
    
   };
+  
+  const nav=useNavigate();
+  const handleOrdered=()=>
+  {
+      axios.post(`https://snapdealbackend.onrender.com/orders/done`,{product:cart},{headers:{token:localStorage.getItem("token")}}).then(r=>
+      {
+        if(r.data.msg)
+            {
+                toast({
+                    title: 'Order',
+                    description: r.data.msg,
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+
+                  cart.map((ele)=>
+                  {
+                    axios.patch(`https://snapdealbackend.onrender.com/carts/delete`,{productId:ele._id},{headers:{token:localStorage.getItem("token")}})
+                  })
+
+                  nav("/")
+
+            }
+            else
+            {
+                toast({
+                    title: 'Order',
+                    description: r.data,
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+            }
+      })
+  }
 
 
   return (
@@ -62,7 +99,7 @@ const Pay = () => {
          </Flex>
             
 
-         <Button  color="white" backgroundColor="#E40046" mt={8}>PAY RS. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</Button>
+         <Button  color="white" backgroundColor="#E40046" mt={8} onClick={handleOrdered}>PAY RS. {cart.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</Button>
          <Text color="black" mt={5}>7 Days Easy Returns</Text>
               <Text color="black">
                 Trustpay: 100% Payment Protection. Return or Replacement is

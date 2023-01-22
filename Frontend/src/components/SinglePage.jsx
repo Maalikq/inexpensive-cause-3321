@@ -21,24 +21,36 @@ const SinglePage=()=>{
       //  const { isOpen, onOpen, onClose } = useDisclosure();
      
         const addProduct = (data) => {
-          axios
-            .post("https://snapdealbackend.onrender.com/cart", data)
+          
+          axios.post("https://snapdealbackend.onrender.com/carts/addToCart",{product:{product:id,quntity:1}},{headers:{token:localStorage.getItem("token")}})
             .then((r) => {
-              toast({
-                position: "top-left",
-                render: () => (
-                  <Box color="white" p={3} bg="blue.500">
-                  Product Added Successfully
-                  </Box>
-                ),
-              });
+               if(r.data.msg)
+               {
+                toast({
+                  title: 'Product',
+                  description: r.data.msg,
+                  status: 'success',
+                  duration: 9000,
+                  isClosable: true,
+                })
+               }
+               else
+               {
+                toast({
+                    title: 'Product',
+                    description: r.data,
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+               }
             })
             .catch((e) =>
             {
                toast({
                  title: "Something went wrong",
-                 description: "Login First.",
-                 status: "success",
+                 description: e,
+                 status: "error",
                  duration: 9000,
                  isClosable: true,
                });
