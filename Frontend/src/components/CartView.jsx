@@ -3,8 +3,41 @@ import {BsHeart} from 'react-icons/bs';
 
 import styles from './CartView.module.css';
 import { useState } from 'react';
+import axios from 'axios';
+import { useToast } from '@chakra-ui/react';
 
-export default function CartView({product,handelremove,qtychange}){
+export default function CartView({product,qtychange}){
+
+    const toast = useToast()
+    const handelremove=(id)=>{
+        console.log(localStorage.getItem("token"))
+        console.log(product)
+     
+        axios.patch(`https://snapdealbackend.onrender.com/carts/delete`,{productId:id},{headers:{token:localStorage.getItem("token")}})
+        .then(r=>{
+            if(r.data.msg)
+            {
+                toast({
+                    title: 'Product',
+                    description: r.data.msg,
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+
+            }
+            else
+            {
+                toast({
+                    title: 'Product',
+                    description: r.data,
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+            }
+        })
+    }
    
        
   return (
@@ -20,7 +53,7 @@ export default function CartView({product,handelremove,qtychange}){
               </div>
 
               <div style={{display:"flex",}}>
-                  <div  className={styles.action}><RiCloseFill onClick={handelremove} style={{marginRight:"0.5rem"}} size="1.3rem"/>REMOVE</div> | 
+                  <div  className={styles.action}><RiCloseFill onClick={()=>handelremove(product._id)} style={{marginRight:"0.5rem"}} size="1.3rem"/>REMOVE</div> | 
                   <div className={styles.action}><BsHeart style={{marginRight:"0.5rem"}}/>MOVE TO SHORTLIST</div>
               </div>
           </div>
