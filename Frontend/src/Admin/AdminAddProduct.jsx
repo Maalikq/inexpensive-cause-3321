@@ -24,14 +24,14 @@ const AdminAddProduct = () => {
     const handleLogout=()=>
     {
         localStorage.removeItem("token")
-        nav("/login")
+        nav("/")
     }
  
   
    
     const handleAdd=()=>
     {
-        axios.post("http://localhost:3000/products/addProduct",current,{headers:{token:localStorage.getItem("token")}}).then(r=>
+        axios.post("https://snapdealbackend.onrender.com/products/addProduct",current,{headers:{token:localStorage.getItem("token")}}).then(r=>
         {
             if(r.data.msg)
             {

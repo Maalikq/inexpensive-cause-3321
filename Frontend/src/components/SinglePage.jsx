@@ -57,10 +57,10 @@ const SinglePage=()=>{
           
           w="90%"
           gap={3}
-          m="auto"
+          justifyContent="center"
           bg="white"
           p="20px"
-          
+          m="auto"
         >
           <Box w="40%" id="imageMagnifyer" zIndex={1}>
             <ReactImageMagnify
