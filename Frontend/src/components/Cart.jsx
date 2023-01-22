@@ -8,7 +8,7 @@ import { RiCloseFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
-import {Box, useDisclosure} from "@chakra-ui/react";
+import {Box, Heading, useDisclosure} from "@chakra-ui/react";
 import {  Modal,
   ModalOverlay,
   ModalContent,
@@ -56,42 +56,36 @@ const Notification = styled.div`
 
 
 
-const Cart = () => {
+const Cart = ({isOpen,onOpen,onClose}) => {
 
-  // let { cartProduct } = React.useContext(CartProvider);
+  
   const [popup, setPopup] = useState(true);
   const [open, setOpen] = React.useState(false);
   const [cart, setCart] = React.useState([]);
   const [totalRs, setTotalRs] = React.useState(0);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  // const { isOpen, onOpen, onClose } = useDisclosure()
 
   const [qty, setqty] = useState(1);
   
   const navigate = useNavigate();
-  // let { user, setUser } = useContext(UserProvider);
-  // const [opensnackbar, setOpensnackbar] = React.useState(false);
-  // const { product, isLooding } = useSelector(
-  //   (state) => state.app,
-  //   shallowEqual
-  // );
-  // const dispatch = useDispatch();
-  const handleOpen = () => {setOpen(true);
-    onOpen();
-  };
+  
+  // const handleOpen = () => {setOpen(true);
+  //   onOpen();
+  // };
   const handleClose = () => {setOpen(false)
   };
   
 
 
-  let cartProduct={
-    title:"hrx item name",
-    images:[
-          "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"
-    ],
-    discounted_price:"584",
+  // let cartProduct={
+  //   title:"hrx item name",
+  //   images:[
+  //         "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"
+  //   ],
+  //   discounted_price:"584",
 
 
-  }
+  // }
 
   
   const token=localStorage.getItem("token");
@@ -138,6 +132,25 @@ const Cart = () => {
    
   }
   
+  const handleremove=(id)=>{
+
+    axios.delete("https://snapdealbackend.onrender.com/carts/delete",
+     
+    { productId:id},
+   
+    {
+     
+    headers:{
+      "token":token
+    },}
+
+
+  ).then(()=>console.log("hogaya"))
+  .catch((err)=>console.log(err));
+    
+  
+
+  }
   
 
   const checkout=()=>{
@@ -152,7 +165,7 @@ const Cart = () => {
 
 <div className={styles.main}>
       
-        <div className={styles.cont}>
+        {/* <div className={styles.cont}>
           <Notification show={popup} className={styles.notif}>
             <div>
               <TiTick />
@@ -202,7 +215,7 @@ const Cart = () => {
               <div onClick={handleOpen}>VIEW CART</div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <Modal
            isOpen={isOpen}
@@ -258,10 +271,12 @@ const Cart = () => {
                 <div>Subtotal</div>
               </div>
 
-                {cart.map((item, ind) => (
+                { cart.length==0?<Heading>Your Cart is Empty</Heading>:
+                cart.map((item, ind) => (
                 <CartView
                   product={item}
                   qtychange={qtychange}
+                  handleremove={()=>handleremove(item.product._id)}
                   key={ind}
                   
 

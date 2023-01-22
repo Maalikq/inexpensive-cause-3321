@@ -1,8 +1,8 @@
 import React from "react";
-import paymentIcon from "../Assets/paymentImg.png";
-import trustIcon from "../Assets/trust.png";
-import helpIcon from "../Assets/help.png";
-import shopMobileIcon from "../Assets/shop.png";
+import paymentIcon from "../assets/paymentImg.png";
+import trustIcon from "../assets/trust.png";
+import helpIcon from "../assets/help.png";
+import shopMobileIcon from "../assets/shop.png";
 import '../Styles/HomeStyles/MidContainer.css'
 
 const MidContainer = () => {
