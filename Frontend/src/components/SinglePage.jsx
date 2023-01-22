@@ -22,17 +22,31 @@ const SinglePage=()=>{
      
         const addProduct = (data) => {
           axios
-            .post("https://snapdealbackend.onrender.com/cart", data)
+            .post("https://snapdealbackend.onrender.com/carts/addToCart", {product:{product:id,quntity:1}},
+            {headers:{token:localStorage.getItem("token")}
+          })
             .then((r) => {
-              toast({
-                position: "top-left",
-                render: () => (
-                  <Box color="white" p={3} bg="blue.500">
-                  Product Added Successfully
-                  </Box>
-                ),
-              });
-            })
+              if(r.data.msg)
+            {
+                toast({
+                    title: 'Cart',
+                    description: r.data.msg,
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+            }
+            else
+            {
+                toast({
+                    title: 'Cart',
+                    description: r.data,
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                  })
+            }
+        })
             .catch((e) =>
             {
                toast({
@@ -46,7 +60,7 @@ const SinglePage=()=>{
             );
         };
   
-  const off= ((((data.price-data.offPrice)*100))/data.price);
+  const off= (((Math.floor(data.price-data.offPrice)*100))/data.price);
   console.log(off)
   
  
@@ -160,8 +174,8 @@ const SinglePage=()=>{
                 <Button
                   size="lg"
                   colorScheme="pink"
-                  onClick={(ele) => {
-                    addProduct(ele);
+                  onClick={() => {
+                    addProduct();
                   }}
                 >
                   ADD TO CART
