@@ -11,14 +11,15 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import AllRoutes from './AllProductPage/AllRoutes';
+// import AllRoutes from './AllProductPage/AllRoutes';
+import OrderHistory from './components/OrderHistory';
 function App() {
 
 
   return (
     <div className="App">
    
-     
+     <OrderHistory/>
     </div>
   );
 }

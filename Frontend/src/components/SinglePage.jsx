@@ -48,16 +48,7 @@ const SinglePage=()=>{
   
   const off= ((((data.price-data.offPrice)*100))/data.price);
   console.log(off)
-    //  const ratingHandle=()=>{
-    //   let rate=Math.floor(data.rating)
-    //   for(let i=0;i<5;i++){
-    //     if(i<rate){
-    //        const color = "yellow";
-    //     }else{
-    //        const color = "white";
-    //     }
-    //   }
-    //  }
+  
  
 
     return (
@@ -100,7 +91,7 @@ const SinglePage=()=>{
                 <StarIcon color="yellow" />
                 <StarIcon color="yellow" />
                 <StarIcon color="yellow" />
-                <AiOutlineHeart />
+                {/* <AiOutlineHeart /> */}
                 <Text>({data?.rating})</Text>
               </Flex>
               <hr
