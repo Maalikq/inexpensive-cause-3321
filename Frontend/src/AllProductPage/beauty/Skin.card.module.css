@@ -14,7 +14,7 @@
   line-height: 18px;
 }
 .mensPprice {
-  margin-left: -40%;
+  
   font-size: 13px;
   text-decoration: line-through;
   color: #cccccc;
@@ -34,11 +34,12 @@
 }
 .priceall {
   margin-top: 10px;
+  margin-left: 5px;
 }
 .ratingflex{
   width: 20%;
   margin-bottom: 10px;
-  margin-left: 5%;
+  margin-left: 1% !important;
     display: flex;
   
 }

@@ -36,8 +36,9 @@
 }
 .ratingflex{
   width: 20%;
+  margin-left: 1% !important;
   margin-bottom: 10px;
-  margin-left: 30%;
     display: flex;
+
   
 }
