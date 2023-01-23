@@ -6,9 +6,8 @@ import { Button, Stack } from '@chakra-ui/react'
 //import { getProductData } from "../redux/action";
 import MensCard from "./shoes.card";
 import ScrollToTop from "react-scroll-to-top";
-
+import {BsArrowUpCircleFill} from "react-icons/bs"
 import { Link } from "react-router-dom";
-
 
 
 const MensProducts = () => {
@@ -62,13 +61,12 @@ const MensProducts = () => {
           <option value="disc-asc">Discount</option>
           <option value="rating-asc">Rating</option>
         </select>
+        
       </div>
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
-
            <Link to={`/products/${item._id}`}> <MensCard {...item} /></Link>
-
           </div>
         ))}
       </div>

@@ -75,9 +75,7 @@ const Sarees = () => {
       <div className={styles.container}>
         {products?.map((item) => (
           <div key={item._id} className={styles.allDataGrid}>
-
             <Link to={`/products/${item._id}`}> <SareesCard {...item} /></Link>
-
           </div>
         ))}
       </div>

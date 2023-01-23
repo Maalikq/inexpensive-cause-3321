@@ -23,31 +23,26 @@ const topCategoriesData = [
     imgSrc: mobileIcon,
     listData: allOffersData,
     img: mens,
-
     path:"/products/tshirt"
-
     
   },
   {
     name: "Women's Fashion",
     imgSrc: livingIcon,
-    listData: allOffersData,
+    listData: mobilesData,
     img: women,
-
     path:"/products/sarees"
-
   },
   {
-    name: "Women's Sarees",
+    name: "Home & Kitchen",
     imgSrc: homeIcon,
     listData: allOffersData,
     img: sidehome,
-    link:"/products/sarees"
   },
   {
     name: "Toys,kids' Fashion & m...",
     imgSrc: fashionIcon,
-    listData: allOffersData,
+    listData: mobilesData,
     img: toy,
   },
   {
@@ -60,7 +55,7 @@ const topCategoriesData = [
 ];
 
 const moreCategoriesData = [
-  { name: "Men's Fashion", listData: allOffersData, img: mens ,link:"/products/shoes" },
+  { name: "Men's Fashion", listData: allOffersData, img: mens },
   { name: "Women's Fashion", listData: mobilesData, img: toy },
   {
     name: "Toys, Kids' Fashion & more",
@@ -111,9 +106,7 @@ export const HomeSidebar = (props) => {
                     style={{ height: "28px" }}
                   />
                   <p>
-
                     <NavLink to={item.path} >
-
 
                   {item.name}
                     </NavLink>
@@ -130,12 +123,9 @@ export const HomeSidebar = (props) => {
             {moreCategoriesData.map((item, i) => {
               return (
                 <li key={i} className="sidebar-li sidebar__more-li">
-
                   {item.name}
                   <div className="product-list-wrapper">
-                    <NavLink to={item.link}>
                     <SideProductList listData={item.listData} img={item.img} />
-                  </NavLink>
                   </div>
                 </li>
               );

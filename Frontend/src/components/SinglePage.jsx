@@ -21,27 +21,6 @@ const SinglePage=()=>{
       //  const { isOpen, onOpen, onClose } = useDisclosure();
      
         const addProduct = (data) => {
-<<<<<
-          axios
-            .post("https://snapdealbackend.onrender.com/carts/addToCart", {product:{product:id,quntity:1}},
-            {headers:{token:localStorage.getItem("token")}
-          })
-            .then((r) => {
-              if(r.data.msg)
-            {
-                toast({
-                    title: 'Cart',
-                    description: r.data.msg,
-                    status: 'success',
-                    duration: 9000,
-                    isClosable: true,
-                  })
-            }
-            else
-            {
-                toast({
-                    title: 'Cart',
-
           
           axios.post("https://snapdealbackend.onrender.com/carts/addToCart",{product:{product:id,quntity:1}},{headers:{token:localStorage.getItem("token")}})
             .then((r) => {
@@ -61,18 +40,13 @@ const SinglePage=()=>{
                {
                 toast({
                     title: 'Product',
-
                     description: r.data,
                     status: 'error',
                     duration: 9000,
                     isClosable: true,
                   })
-
-            }
-        })
                }
             })
-
             .catch((e) =>
             {
                toast({
@@ -86,7 +60,7 @@ const SinglePage=()=>{
             );
         };
   
-  const off= (((Math.floor(data.price-data.offPrice)*100))/data.price);
+  const off= ((((data.price-data.offPrice)*100))/data.price);
   console.log(off)
   
  
@@ -200,8 +174,8 @@ const SinglePage=()=>{
                 <Button
                   size="lg"
                   colorScheme="pink"
-                  onClick={() => {
-                    addProduct();
+                  onClick={(ele) => {
+                    addProduct(ele);
                   }}
                 >
                   ADD TO CART
