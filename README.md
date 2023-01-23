@@ -37,7 +37,7 @@ We used Express for backend and ReactJs for frontend along with few other librar
 
 
 
-<h3 align="center"><a href="https://snapdeal-three.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://grabdeal.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
 
 
 
@@ -130,7 +130,7 @@ This project was built using React,React-BootStrap, Chakra UI, HTML, CSS,Redux,N
 
 
 # PROJECT VERCEL LINK
-https://snapdeal-three.vercel.app/
+https://grabdeal.vercel.app/
 
 # Getting Started with Create React App
 
