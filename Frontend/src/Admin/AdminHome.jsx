@@ -26,7 +26,7 @@ const AdminHome = () => {
     useEffect(()=>
     {
 
-      setSearchParams({search:search,page:page})
+      setSearchParams({page:page})
       axios.get(`https://snapdealbackend.onrender.com/products/?search=${search}&page=${page}`,{headers:{token:localStorage.getItem("token")}}).then(r=>setData(r.data));
     },[random,page]);
    
