@@ -18,20 +18,16 @@ import {  Modal,
   ModalCloseButton,} from "@chakra-ui/react";
 
 import CartView from "./CartView";
-// import { CartProvider } from "../../Context/CartContextProvider";
+
 import axios from "axios";
-// import Snackbar from "@mui/material/Snackbar";
+
 import { useToast } from '@chakra-ui/react'
 
 import {IconButton} from "@chakra-ui/react";
 
 import {CloseButton} from "@chakra-ui/react";
 
-// import { removeDetails } from "../../Redux/Allproduct/action";
-// import { shallowEqual, useDispatch, useSelector } from "react-redux";
-// import { deleteCartProduct } from "../../Server/Apis";
-// import { delete_api } from "../../Redux/Cacrt/cart.api";
-// import { UserProvider } from "../../Context/UserContextProvider";
+
 
 const style = {
   // position: "absolute",
@@ -63,29 +59,22 @@ const Cart = ({isOpen,onOpen,onClose}) => {
   const [open, setOpen] = React.useState(false);
   const [cart, setCart] = React.useState([]);
   const [totalRs, setTotalRs] = React.useState(0);
-  // const { isOpen, onOpen, onClose } = useDisclosure()
+  
 
   const [qty, setqty] = useState(1);
   
   const navigate = useNavigate();
   
-  // const handleOpen = () => {setOpen(true);
-  //   onOpen();
-  // };
+  
   const handleClose = () => {setOpen(false)
   };
   const toast = useToast()
+  
 
-
-  // let cartProduct={
-  //   title:"hrx item name",
-  //   images:[
-  //         "https://n4.sdlcdn.com/imgs/k/e/u/large/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg"
-  //   ],
-  //   discounted_price:"584",
+ 
    const [random,setRandom]=useState(0)
 
-  // }
+  
   const handelremove=(id)=>{
        
      
@@ -122,7 +111,8 @@ const Cart = ({isOpen,onOpen,onClose}) => {
    React.useEffect(()=>{
     cartHandler();
            
-   
+    const tot=cart.reduce((c,el)=>c+(el.product.price*el.quntity),0);
+      setTotalRs(tot);
 
    },[qty,random])
   
@@ -134,11 +124,29 @@ const Cart = ({isOpen,onOpen,onClose}) => {
       }
   
   }
-    ).then(res=>{setCart(res.data.products)})
+    ).then(res=>{setCart(res.data.products)}).then(()=>{
 
+      const tot=cart.reduce((c,el)=>c+(el.product.price*el.quntity),0);
+      setTotalRs(tot);
+
+    })
+
+    // if(cart.length!==0){
+    //   const tot= cart?.reduce((c,el)=>
+    //   {
+    //            if(el.product){
+  
+               
+    //     return c+(el.product.price*el.quntity),0}
+    //   });
+  
+    //   setTotalRs(tot);
+    // }
     
    
   };
+
+  
 
   const qtychange=(val,prodid)=>{
     
@@ -255,7 +263,10 @@ const Cart = ({isOpen,onOpen,onClose}) => {
               <div>
                 <div style={{ display: "flex" }}>
                   <div>Sub Total: </div>
-                  <div style={{ marginLeft: "auto" }}>Rs. {cart?.reduce((c,el)=>c+(el.product.price*el.quntity),0)}</div>
+                  <div style={{ marginLeft: "auto" }}>Rs. {totalRs}
+                        
+                  </div>
+                  
                 </div>
                 <div style={{ display: "flex" }}>
                   <div>Delivery Charges: </div>
@@ -270,7 +281,7 @@ const Cart = ({isOpen,onOpen,onClose}) => {
               onClick={checkout}
                style={{ fontSize:"15px",fontWeight:"bold" }}
               >
-                PROCEED TO PAY Rs. {cart?.reduce((c,el)=>c+(el.product.price*el.quntity),0)}
+                PROCEED TO PAY Rs. {totalRs}
               </div>
             </div>
           </div>
