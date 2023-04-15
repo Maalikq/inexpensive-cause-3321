@@ -4,8 +4,9 @@
 <img src="https://user-images.githubusercontent.com/96861847/213928241-cd1725bf-128d-4150-b4f4-faf51803a17a.png"
 " alt="grabDeal"/>
  <h3>Admin credentials for login: </h3>
- <p>username:</p>
- <p>password:</p>
+ <p>username: rishunayak22@gmail.com</p>
+ <p>password: Rr@887433</p>
+ (visit /admin manually to access admin panel after login)
 <h3 align="center">It's a React-JS E-commerce web application with all the major functionalities</h3>
 Snapdeal is an Indian online e-commerce website. People can search and find products of their choice and order them. The variety of products include clothing, accessories, kitchen-ware, jewellery etc.
 
